@@ -1,3 +1,4 @@
+package ida.gui;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -6,14 +7,14 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class IDAGUI extends JPanel {
+public class Gui extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
 	public static void main(String[] args) {
 
 		JFrame frame = new JFrame("IDA4D2");
-		frame.getContentPane().add(new IDAGUI());
+		frame.getContentPane().add(new Gui());
 		frame.pack();
 		frame.setVisible(true);
 		frame.setResizable(false);
@@ -22,7 +23,7 @@ public class IDAGUI extends JPanel {
 
 	}
 
-	public IDAGUI() {
+	public Gui() {
 		JPanel conversationPanel = new JPanel();
 		JPanel entryPanel = new JPanel();
 		JPanel buttonPanel = new JPanel();
