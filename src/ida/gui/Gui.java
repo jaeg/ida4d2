@@ -1,11 +1,15 @@
 package ida.gui;
+
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Gui extends JPanel {
 
@@ -19,7 +23,7 @@ public class Gui extends JPanel {
 		frame.setVisible(true);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 	}
 
@@ -38,12 +42,50 @@ public class Gui extends JPanel {
 		JMenuBar optionsList = new JMenuBar();
 		ButtonGroup options = new ButtonGroup();
 		JMenuItem save = new JMenuItem("Save Log");
+		/*save.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				if ()
+				{
+				} else
+				{
+				}
+			}
+		});*/
 		JMenuItem clear = new JMenuItem("Clear Log");
+		/*clear.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				if ()
+				{
+				} else
+				{
+				}
+			}
+		});*/
 		JMenuItem color = new JMenuItem("Color Scheme");
+		/*color.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				if ()
+				{
+				} else
+				{
+				}
+			}
+		});*/
 		options.add(save);
+		
 		options.add(clear);
+		
 		options.add(color);
-
+		
 		optionsList.setBorder(new EmptyBorder(10, 10, 10, 10));
 		try {
 			BufferedImage logo = ImageIO.read(new File("IDALOGO.gif"));
@@ -82,14 +124,64 @@ public class Gui extends JPanel {
 		add(conversationPanel);
 
 		JButton submit = new JButton("Submit");
+		/*submit.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				if ()
+				{
+				} else
+				{
+				}
+			}
+		});*/
 		JTextField submissionField = new JTextField();
 		entryPanel.add(submit);
 		entryPanel.add(submissionField);
 		add(entryPanel);
 
 		JButton think = new JButton("Think for me");
-		JButton quit = new JButton("Quit");
+		/*think.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				if ()
+				{
+				} else
+				{
+				}
+			}
+		});*/
+
 		JButton log = new JButton("Full Text Log");
+		/*log.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				if ()
+				{
+				} else
+				{
+				}
+			}
+		});*/
+		JButton quit = new JButton("Quit");
+		/*quit.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				if ()
+				{
+				} else
+				{
+				}
+			}
+		});*/
+		
 		buttonPanel.add(think);
 		buttonPanel.add(log);// Will pop up a JOptionPane that contains the full
 								// log window at the moment.(Kind of just an
@@ -111,19 +203,3 @@ public class Gui extends JPanel {
 
 }
 
-// possible way to implement our pictures of IDA4D2
-
-/*
- * class ImagePanel extends JPanel { Image img;
- * 
- * public ImagePanel(){ // make sure the parent JPanel constructor is called //
- * so it does whatever it needs to do first. super();
- * 
- * img = loadImage("whatever.file"); }
- * 
- * public void paintComponent(Graphics g) { super.paintComponent(g); if(img !=
- * null) { g.drawImage(img, 0, 0, this); } }
- * 
- * public Image loadImage(File f) { Image image =
- * getToolkit().getImage(f.getPath()); return image; } }
- */
