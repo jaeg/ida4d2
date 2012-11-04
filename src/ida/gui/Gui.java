@@ -128,12 +128,12 @@ public class Gui extends JPanel {
 		{
 			@Override
 			public void actionPerformed(ActionEvent e)
-			{
-				if ()
-				{
-				} else
-				{
-				}
+			{	
+				
+				String response = IDA.response(submissionField.getText());
+				conversationLog.append("\nME: "+submissionField.getText()+"\nIDA: "+ response);
+				submissionField.setText("");
+				sayIt(response);
 			}
 		});*/
 		JTextField submissionField = new JTextField();
