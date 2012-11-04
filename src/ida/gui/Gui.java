@@ -3,6 +3,8 @@ package ida.gui;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -137,6 +139,17 @@ public class Gui extends JPanel {
 			}
 		});*/
 		JTextField submissionField = new JTextField();
+		submissionField.addKeyListener(new KeyAdapter()
+		{
+
+			@Override
+			public void keyPressed(KeyEvent e)
+			{
+				int key = e.getKeyCode();
+				if (key == KeyEvent.VK_ENTER){
+					JOptionPane.showMessageDialog(null, "Clinton it works");
+				}}
+		});
 		entryPanel.add(submit);
 		entryPanel.add(submissionField);
 		add(entryPanel);
