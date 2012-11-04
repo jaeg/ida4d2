@@ -169,19 +169,11 @@ public class Gui extends JPanel {
 			}
 		});*/
 		JButton quit = new JButton("Quit");
-		/*quit.addActionListener(new ActionListener()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				if ()
-				{
-				} else
-				{
-				}
-			}
-		});*/
-		
+		quit.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent event) {
+		        System.exit(0);
+		    }
+		});
 		buttonPanel.add(think);
 		buttonPanel.add(log);// Will pop up a JOptionPane that contains the full
 								// log window at the moment.(Kind of just an
