@@ -1,6 +1,7 @@
 package ida.gui;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -9,14 +10,30 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
+import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Gui extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
+	private JFileChooser saveChoice;
+	private JTextField logField;
+	private JTextField submissionField;
+	
+	
 	public static void main(String[] args) {
 
 		JFrame frame = new JFrame("IDA4D2");
@@ -44,18 +61,29 @@ public class Gui extends JPanel {
 		JMenuBar optionsList = new JMenuBar();
 		ButtonGroup options = new ButtonGroup();
 		JMenuItem save = new JMenuItem("Save Log");
-		/*save.addActionListener(new ActionListener()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				if ()
+		/*save.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            BufferedWriter writer;
+            if (saveChoice.showDialog(null, "Save") == JFileChooser.APPROVE_OPTION)
+            {
+				try
 				{
-				} else
+					FileWriter fstream = new FileWriter(
+							saveChoice.getSelectedFile());
+					BufferedWriter out = new BufferedWriter(
+							fstream);
+					out.write(logField.getText());
+					out.close();
+					JOptionPane.showMessageDialog(null, "Your chat log has been saved.");
+				} catch (Exception ex)
 				{
+					JOptionPane.showMessageDialog(null,
+							"Error saving file!");
 				}
 			}
-		});*/
+		}
+	});*/
 		JMenuItem clear = new JMenuItem("Clear Log");
 		/*clear.addActionListener(new ActionListener()
 		{
@@ -105,40 +133,41 @@ public class Gui extends JPanel {
 		optionsList.setBackground(Color.BLUE);
 		add(optionsList);
 		optionsList.setPreferredSize(new Dimension(50, 50));
-		JTextField logField = new JTextField();
-		logField.setEditable(false);
-		JScrollPane conversationLog = new JScrollPane(logField);// figure out
-																// how to set an
-																// exact amount
-																// of row
-																// letters
+		
+		
+		
 
-		JPanel imageBox = new JPanel();// WIll have to be changed later for
-										// image with notes from below
+		JPanel imageBox = new JPanel();
 		JLabel image = new JLabel("IDA IMAGE BOX");
 		imageBox.add(image);
 
-		add(conversationLog);
-		conversationPanel.add(conversationLog);
-		imageBox.add(image);
-		add(imageBox);
-		conversationPanel.add(imageBox);
-		add(conversationPanel);
 
 		JButton submit = new JButton("Submit");
 		/*submit.addActionListener(new ActionListener()
 		{
 			@Override
 			public void actionPerformed(ActionEvent e)
-			{	
-				
-				String response = IDA.response(submissionField.getText());
-				conversationLog.append("\nME: "+submissionField.getText()+"\nIDA: "+ response);
+			{					
+				logField.append("\nME: "+ submissionField.getText());
 				submissionField.setText("");
-				sayIt(response);
 			}
 		});*/
-		JTextField submissionField = new JTextField();
+		JScrollPane conversationLog = new JScrollPane(logField);// figure out
+																// how to set an
+																// exact amount
+																// of row
+																// letters
+		logField = new JTextField();
+		add(conversationLog);
+		conversationPanel.add(conversationLog);
+		imageBox.add(image);
+		add(imageBox);
+		conversationPanel.add(imageBox);
+		add(conversationPanel);
+		
+		
+		
+		submissionField = new JTextField();
 		submissionField.addKeyListener(new KeyAdapter()
 		{
 
@@ -147,7 +176,7 @@ public class Gui extends JPanel {
 			{
 				int key = e.getKeyCode();
 				if (key == KeyEvent.VK_ENTER){
-					JOptionPane.showMessageDialog(null, "Clinton it works");
+					JOptionPane.showMessageDialog(null, "Enter key works");
 				}}
 		});
 		entryPanel.add(submit);
