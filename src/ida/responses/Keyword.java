@@ -1,5 +1,14 @@
 package ida.responses;
 
+/**
+ * 
+ * Store Keywords taken from UserMessage.
+ * Used to store weight and the word itself.
+ * 
+ * @author Matt
+ *
+ */
+
 public class Keyword {
 	
 	private String keyword;
@@ -18,5 +27,6 @@ public class Keyword {
 	public void setWeight(double weight){
 		this.weight = weight;
 	}
+	
 
 }

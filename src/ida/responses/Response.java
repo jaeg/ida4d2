@@ -1,5 +1,12 @@
 package ida.responses;
 
+/**
+ * Store response that Ida will give the user.
+ * 
+ * @author Matt
+ *
+ */
+
 public class Response {
 	
 	private String response;
