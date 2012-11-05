@@ -5,5 +5,8 @@
 	<classpathentry kind="lib" path="/Users/johngodsey/Documents/CS 222/workspace/IDA4D2/Libraries/gtranslateapi-1.0.jar"/>
 	<classpathentry kind="lib" path="/Users/johngodsey/Documents/CS 222/workspace/IDA4D2/Libraries/guava-13.0.1.jar"/>
 	<classpathentry kind="lib" path="/Users/johngodsey/Documents/CS 222/workspace/IDA4D2/Libraries/jl1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Matt/Downloads/gtranslateapi-1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Matt/Downloads/guava-13.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Matt/Downloads/jl1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

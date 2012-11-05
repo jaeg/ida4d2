@@ -1,15 +1,18 @@
 package ida.gui;
 
+import ida.responses.Response;
+
 import com.gtranslate.Audio;
 import com.gtranslate.Language;
 
+
 public class Voice 
 {
-	public static void sayIt(String message)
+	public static void sayIt(Response message)
 	{
 		Audio audio = Audio.getInstance();
 		
-		String messageChunks[] = message.split("[{,}{.}]+");
+		String messageChunks[] = message.toString().split("[{,}{.}]+");
 		
 		try
 		{
