@@ -22,6 +22,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
@@ -30,7 +31,7 @@ public class Gui extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private JFileChooser saveChoice;
-	private JTextField logField;
+	private JTextArea logField;
 	private JTextField submissionField;
 	
 	
@@ -143,21 +144,24 @@ public class Gui extends JPanel {
 
 
 		JButton submit = new JButton("Submit");
-		/*submit.addActionListener(new ActionListener()
+		submit.addActionListener(new ActionListener()
 		{
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{					
-				logField.append("\nME: "+ submissionField.getText());
-				submissionField.setText("");
+				submitAction();
 			}
-		});*/
+		});
+		
+		
+		
+		logField = new JTextArea();
 		JScrollPane conversationLog = new JScrollPane(logField);// figure out
 																// how to set an
 																// exact amount
 																// of row
 																// letters
-		logField = new JTextField();
+		
 		add(conversationLog);
 		conversationPanel.add(conversationLog);
 		imageBox.add(image);
@@ -176,7 +180,8 @@ public class Gui extends JPanel {
 			{
 				int key = e.getKeyCode();
 				if (key == KeyEvent.VK_ENTER){
-					JOptionPane.showMessageDialog(null, "Enter key works");
+					//JOptionPane.showMessageDialog(null, "Enter key works");
+					submitAction();
 				}}
 		});
 		entryPanel.add(submit);
@@ -233,6 +238,14 @@ public class Gui extends JPanel {
 		imageBox.setBackground(Color.RED);
 		this.setBackground(Color.BLACK);
 
+	}
+	
+	
+	private void submitAction()
+	{
+		logField.append("\nME: "+ submissionField.getText());
+		Voice.sayIt(submissionField.getText());
+		submissionField.setText("");
 	}
 
 }
