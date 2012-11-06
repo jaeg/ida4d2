@@ -1,4 +1,4 @@
-package ida.parser;
+package ida.XML;
 
 import java.io.File;
 import java.io.PrintWriter;

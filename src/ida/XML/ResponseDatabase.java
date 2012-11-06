@@ -1,4 +1,4 @@
-package ida.parser;
+package ida.XML;
 
 
 import java.io.IOException;
@@ -14,7 +14,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class XMLParser
+public class ResponseDatabase
 {
 	
 	Document doc;
@@ -22,7 +22,7 @@ public class XMLParser
 	/*
 	 * Store keyword nodes for searching purposes.  Node.getParent() should be useful in this case.
 	 */
-	public XMLParser() throws ParserConfigurationException, SAXException, IOException
+	public ResponseDatabase() throws ParserConfigurationException, SAXException, IOException
 	{
 		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();

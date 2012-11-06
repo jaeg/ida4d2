@@ -1,4 +1,4 @@
-package ida.parser;
+package ida.XML;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -18,7 +18,7 @@ public class XMLTester
 	 */
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException
 	{
-		XMLParser parser = new XMLParser();
+		ResponseDatabase parser = new ResponseDatabase();
 		
 		LinkedList<String> keywords = new LinkedList<String>();
 		keywords.add("I");

@@ -1,6 +1,6 @@
 package ida.Utilities;
 
-import ida.parser.XMLWriter;
+import ida.XML.XMLWriter;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
