@@ -9,7 +9,10 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
@@ -69,6 +72,28 @@ public class XMLWriter
 		out.println(xmlString);
 		out.close();
 		System.out.println(xmlString);
+	}
+	
+	//TODO - Save IDA's database to XML
+	public static void saveXML(Document doc) throws Exception
+	{
+		
+		Transformer transformer = TransformerFactory.newInstance().newTransformer();
+		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+		//initialize StreamResult with File object to save to file
+		StreamResult result = new StreamResult(new StringWriter());
+		DOMSource source = new DOMSource(doc);
+		transformer.transform(source, result);
+
+		String xmlString = result.getWriter().toString();
+
+		File file = new File("responses.xml");
+		PrintWriter out = new PrintWriter(file);
+		out.println(xmlString);
+		out.close();
+		System.out.println(xmlString);
+		
 	}
 
 }

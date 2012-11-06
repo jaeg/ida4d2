@@ -2,12 +2,7 @@ package ida.ai;
 
 import ida.responses.Response;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.LinkedList;
-import java.util.Scanner;
-
-import javax.swing.JOptionPane;
 
 import com.google.common.collect.HashBiMap;
 
