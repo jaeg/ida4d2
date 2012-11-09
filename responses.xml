@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Responses>
-
-<Response>
-<Keywords>
-<Keyword weight="0.651553930077089">CAN</Keyword>
-<Keyword weight="0.9010327195892509">I</Keyword>
-<Keyword weight="0.2691719846912112">DANCE</Keyword>
-</Keywords>
-<Messages>
-<Message>Yes you can can.</Message>
-</Messages>
-</Response>
-<Response>
-<Keywords>
-<Keyword weight="0.2051885438367479">I</Keyword>
-<Keyword weight="0.6082716800005732">LIKE</Keyword>
-<Keyword weight="0.6370058931261435">PIE</Keyword>
-</Keywords>
-<Messages>
-<Message>I do too!</Message>
-<Message>I hate pie.</Message>
-</Messages>
-</Response>
+	<Response>
+		<Keywords>
+			<Keyword weight="0.651553930077089">CAN</Keyword>
+			<Keyword weight="0.9010327195892509">I</Keyword>
+			<Keyword weight="0.2691719846912112">DANCE</Keyword>
+		</Keywords>
+		<Messages>
+			<Message>Yes you can can.</Message>
+		</Messages>
+	</Response>
+	<Response>
+		<Keywords>
+			<Keyword weight="0.2051885438367479">I</Keyword>
+			<Keyword weight="0.6082716800005732">LIKE</Keyword>
+			<Keyword weight="0.6370058931261435">PIE</Keyword>
+		</Keywords>
+		<Messages>
+			<Message>I do too!</Message>
+			<Message>I hate pie.</Message>
+		</Messages>
+	</Response>
 </Responses>
-
