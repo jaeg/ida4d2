@@ -9,7 +9,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 
 import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
@@ -20,6 +22,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -39,6 +42,7 @@ public class Gui extends JPanel {
 		JPanel conversationPanel = new JPanel();
 		JPanel entryPanel = new JPanel();
 		JPanel buttonPanel = new JPanel();
+		saveChoice = new JFileChooser();
 
 		this.setBorder(new EmptyBorder(10, 50, 10, 50));
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -53,24 +57,23 @@ public class Gui extends JPanel {
 		/**
 		 * TODO: Implement saving chat log.
 		 */
-		// save.addActionListener(new ActionListener() {
-		// @Override
-		// public void actionPerformed(ActionEvent e) {
-		// BufferedWriter writer;
-		// if (saveChoice.showDialog(null, "Save") ==
-		// JFileChooser.APPROVE_OPTION) {
-		// try {
-		// FileWriter fstream = new FileWriter(saveChoice.getSelectedFile());
-		// BufferedWriter out = new BufferedWriter(fstream);
-		// out.write(logField.getText());
-		// out.close();
-		// JOptionPane.showMessageDialog(null, "Your chat log has been saved.");
-		// } catch (Exception ex) {
-		// JOptionPane.showMessageDialog(null, "Error saving file!");
-		// }
-		// }
-		// }
-		// });
+		save.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BufferedWriter writer;
+				if (saveChoice.showDialog(null, "Save") == JFileChooser.APPROVE_OPTION) {
+					try {
+						FileWriter fstream = new FileWriter(saveChoice.getSelectedFile());
+						BufferedWriter out = new BufferedWriter(fstream);
+						out.write(logField.getText());
+						out.close();
+						JOptionPane.showMessageDialog(null, "Your chat log has been saved.");
+					} catch (Exception ex) {
+						JOptionPane.showMessageDialog(null, "Error saving file!");
+					}
+				}
+			}
+		});
 
 		JMenuItem clear = new JMenuItem("Clear Log");
 
