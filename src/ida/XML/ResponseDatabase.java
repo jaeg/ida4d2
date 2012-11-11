@@ -29,12 +29,12 @@ public class ResponseDatabase {
 		keywordNodes = doc.getElementsByTagName("Keyword");
 	}
 
-	// TODO Refactor this function. Maybe break it into four functional parts.
+	/**
+	 * Find keywords similar Group with responses Compare weights for the
+	 * response pick best response.
+	 */
 	public String getResponse(LinkedList<String> keywords) {
-		/*
-		 * Find keywords similar Group with responses Compare weights for the
-		 * response pick best response.
-		 */
+
 		// Get the similar keyword nodes
 		LinkedList<Node> similarKeywords = new LinkedList<Node>();
 		for (int i = 0; i < keywordNodes.getLength(); i++) {
@@ -69,12 +69,17 @@ public class ResponseDatabase {
 
 		// TODO Get a random response
 		if (bestResponse != null) {
-			System.out.println(bestResponse.getChildNodes().item(3).getChildNodes().item(3).getTextContent());
-			String responses[] = bestResponse.getChildNodes().item(3).getTextContent().split("\n");
-			Random generator = new Random();
-			int rando = generator.nextInt(3 );
-			System.out.println(rando);
-			return responses[rando];
+			Node messagesNode = bestResponse.getChildNodes().item(3);
+			int messagesNodeLength = messagesNode.getChildNodes().getLength();
+			LinkedList<String> messages = new LinkedList<String>();
+			for (int i=0; i < messagesNodeLength; i++){
+				String content = messagesNode.getChildNodes().item(i).getTextContent();
+				if (i%2!=0){
+					messages.add(content);
+				}
+			}
+			Random random = new Random();
+			return messages.get(random.nextInt(messages.size()));
 		}
 
 		return "Failure";

@@ -19,6 +19,8 @@
 		<Messages>
 			<Message>I do too!</Message>
 			<Message>I hate pie.</Message>
+			<Message>Pie is my favorite food group.</Message>
+			<Message>What is your favorite type of pie?</Message>
 		</Messages>
 	</Response>
 </Responses>
