@@ -1,4 +1,4 @@
-package ida.XML;
+package ida.Utilities;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -39,7 +39,7 @@ public class XMLWriter
 			keywordNode.setTextContent(keyword);
 			Attr weight = doc.createAttribute("weight");
 			Random generator = new Random();
-			double weightValue = generator.nextDouble();
+			double weightValue = 0.4 + (0.6 - 0.4) * generator.nextDouble();
 			weight.setValue(Double.toString(weightValue));
 			keywordNode.getAttributes().setNamedItem(weight);
 			keywordsNode.appendChild(keywordNode);

@@ -7,6 +7,14 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
+/**
+ * A utility for writing to the XML database.
+ * Used by KeywordUtility.
+ * 
+ * @author Matt
+ *
+ */
+
 public class XMLTester
 {
 
