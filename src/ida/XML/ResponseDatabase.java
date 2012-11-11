@@ -1,5 +1,7 @@
 package ida.XML;
 
+import ida.responses.Response;
+
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Random;
@@ -33,7 +35,7 @@ public class ResponseDatabase {
 	 * Find keywords similar Group with responses Compare weights for the
 	 * response pick best response.
 	 */
-	public String getResponse(LinkedList<String> keywords) {
+	public Response getResponse(LinkedList<String> keywords) {
 
 		// Get the similar keyword nodes
 		LinkedList<Node> similarKeywords = new LinkedList<Node>();
@@ -79,10 +81,10 @@ public class ResponseDatabase {
 				}
 			}
 			Random random = new Random();
-			return messages.get(random.nextInt(messages.size()));
+			return new Response(messages.get(random.nextInt(messages.size())));
 		}
 
-		return "Failure";
+		return new Response("A failure occured in response retrieval.");
 	}
 
 }

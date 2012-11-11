@@ -1,6 +1,8 @@
 package ida.gui;
 
+import ida.XML.ResponseDatabase;
 import ida.responses.Response;
+import ida.user.UserMessage;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -37,12 +39,18 @@ public class Gui extends JPanel {
 	private JFileChooser saveChoice;
 	private JTextArea logField;
 	private JTextField submissionField;
+	private ResponseDatabase responseDatabase;
 
 	public Gui() {
 		JPanel conversationPanel = new JPanel();
 		JPanel entryPanel = new JPanel();
 		JPanel buttonPanel = new JPanel();
 		saveChoice = new JFileChooser();
+		try {
+			responseDatabase = new ResponseDatabase();
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
 
 		this.setBorder(new EmptyBorder(10, 50, 10, 50));
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -219,8 +227,10 @@ public class Gui extends JPanel {
 	}
 
 	private void submitAction() {
-		Response response = new Response(submissionField.getText());
+		UserMessage message = new UserMessage(submissionField.getText());
+		Response response = responseDatabase.getResponse(message.splitMessageIntoKeywords());
 		logField.append("\nME: " + submissionField.getText());
+		logField.append("\nIDA: " + response);
 		Voice.sayIt(response);
 		submissionField.setText("");
 	}

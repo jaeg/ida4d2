@@ -1,5 +1,7 @@
 package ida.user;
 
+import java.util.LinkedList;
+
 
 /**
  * Data structure that stores the user 
@@ -15,6 +17,14 @@ public class UserMessage {
 	
 	public UserMessage(String userInput){
 		this.userInput = userInput;
+	}
+	
+	public LinkedList<String> splitMessageIntoKeywords(){
+		LinkedList<String> list = new LinkedList<String>();
+		for (String word: userInput.split("[\\p{P} \\t\\n\\r]")){
+			list.add(word.toUpperCase());
+		}
+		return list;
 	}
 
 }
