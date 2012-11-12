@@ -37,5 +37,26 @@
 <Message>You're an inquisitive little human.</Message>
 </Messages>
 </Response>
+<Response>
+<Keywords>
+<Keyword weight="0.501434304426484">HELLO</Keyword>
+</Keywords>
+<Messages>
+<Message>Hi, how are you?</Message>
+</Messages>
+</Response>
+
+<Response>
+<Keywords>
+<Keyword weight="0.40491235354041394">I</Keyword>
+<Keyword weight="0.4069785106409292">LIKE</Keyword>
+<Keyword weight="0.46426109895554507">HOW</Keyword>
+<Keyword weight="0.5670596408787816">YOU</Keyword>
+<Keyword weight="0.4177374700004387">TALK</Keyword>
+</Keywords>
+<Messages>
+<Message>Why thank you!</Message>
+</Messages>
+</Response>
 </Responses>
 
