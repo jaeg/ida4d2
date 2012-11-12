@@ -44,6 +44,18 @@ public class ResponseDatabase {
 				similarKeywords.add(keywordNodes.item(i));
 			}
 		}
+		
+		if (similarKeywords.size()==0)
+		{
+			for (int i=0; i<keywordNodes.getLength();i++)
+			{
+				if (keywordNodes.item(i).getFirstChild().getNodeValue().equals("NOKEYFOUND"))
+				{
+					similarKeywords.add(keywordNodes.item(keywordNodes.getLength()-1));
+				}
+			}
+			
+		}
 
 		// Get all the health functions for the keywords
 		double currentHealth = 0.0;

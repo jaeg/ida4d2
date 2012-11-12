@@ -23,18 +23,30 @@
 			<Message>What is your favorite type of pie?</Message>
 		</Messages>
 	</Response>
+	<Response>
+		<Keywords>
+			<Keyword weight="0.41333015676315106">WHAT</Keyword>
+			<Keyword weight="0.44418206475361">IS</Keyword>
+			<Keyword weight="0.421536568864841565">YOUR</Keyword>
+			<Keyword weight="0.5577770179811849">NAME	</Keyword>
+		</Keywords>
+		<Messages>
+			<Message>I am IDA4D2.</Message>
+			<Message>You can't read? It's right up there.</Message>
+			<Message>My serial number is IDA4D2, I don't think I have a name...
+			</Message>
+			<Message>You're an inquisitive little human.</Message>
+		</Messages>
+	</Response>
 <Response>
 <Keywords>
-<Keyword weight="0.11333015676315106">WHAT</Keyword>
-<Keyword weight="0.74418206475361">IS</Keyword>
-<Keyword weight="0.021536568864841565">YOUR</Keyword>
-<Keyword weight="0.7577770179811849">NAME	</Keyword>
+<Keyword weight="0.4572978187624028">FAVORITE</Keyword>
+<Keyword weight="0.4299380223109068">COLOR</Keyword>
 </Keywords>
 <Messages>
-<Message>I am IDA4D2.</Message>
-<Message>You can't read? It's right up there.</Message>
-<Message>My serial number is IDA4D2, I don't think I have a name...</Message>
-<Message>You're an inquisitive little human.</Message>
+<Message>Udum. It's a color humans can't see.</Message>
+<Message>I see a wider color spectrum. Does that make you jealous?</Message>
+<Message>I want to say it's blue, but I don't know why...</Message>
 </Messages>
 </Response>
 <Response>
@@ -57,6 +69,15 @@
 <Messages>
 <Message>Why thank you!</Message>
 </Messages>
+</Response>
+
+<Response>
+    <Keywords>
+        <Keyword weight="1">NOKEYFOUND</Keyword>
+    </Keywords>
+    <Messages>
+        <Message>What are you talking about?</Message>
+    </Messages>
 </Response>
 </Responses>
 
