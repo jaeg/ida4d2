@@ -19,8 +19,8 @@
 		<Messages>
 			<Message>I do too!</Message>
 			<Message>I hate pie.</Message>
-			<Message>Pie is my favorite food group.</Message>
-			<Message>What is your favorite type of pie?</Message>
+			<Message>&amp;, Pie is my favorite food group.</Message>
+			<Message>What is your favorite type of pie? *</Message>
 		</Messages>
 	</Response>
 	<Response>
@@ -78,6 +78,14 @@
     <Messages>
         <Message>What are you talking about?</Message>
     </Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.43784088748061434">Test</Keyword>
+</Keywords>
+<Messages>
+<Message>Test</Message>
+</Messages>
 </Response>
 </Responses>
 
