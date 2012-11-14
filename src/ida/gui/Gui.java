@@ -134,9 +134,7 @@ public class Gui extends JPanel {
 		add(optionsList);
 		optionsList.setPreferredSize(new Dimension(50, 50));
 
-		JPanel imageBox = new JPanel();
-		JLabel image = new JLabel("IDA IMAGE BOX");
-		imageBox.add(image);
+
 
 		JButton submit = new JButton("Submit");
 		submit.addActionListener(new ActionListener() {
@@ -155,9 +153,7 @@ public class Gui extends JPanel {
 
 		add(conversationLog);
 		conversationPanel.add(conversationLog);
-		imageBox.add(image);
-		add(imageBox);
-		conversationPanel.add(imageBox);
+
 		add(conversationPanel);
 
 		submissionField = new JTextField();
@@ -222,7 +218,7 @@ public class Gui extends JPanel {
 		conversationLog.setBackground(Color.RED);
 		entryPanel.setBackground(Color.BLUE);
 		buttonPanel.setBackground(Color.BLUE);
-		imageBox.setBackground(Color.RED);
+	
 		this.setBackground(Color.BLACK);
 	}
 
