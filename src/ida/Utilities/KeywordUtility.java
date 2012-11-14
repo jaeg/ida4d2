@@ -62,6 +62,9 @@ public class KeywordUtility extends JPanel
 
 				try{
 					XMLWriter.writeResponseToFile("responses.xml", keywords, messages);
+					JOptionPane.showMessageDialog(null, "Keywords added succesfully!");
+					keywordInput.setText("");
+					messageInput.setText("");
 				}
 				catch (Exception ex)
 				{

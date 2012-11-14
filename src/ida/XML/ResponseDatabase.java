@@ -93,7 +93,8 @@ public class ResponseDatabase {
 				}
 			}
 			Random random = new Random();
-			return new Response(messages.get(random.nextInt(messages.size())));
+			String message = messages.get(random.nextInt(messages.size())).replace("&","Human").replace("*", "that");
+			return new Response(message);
 		}
 
 		return new Response("A failure occured in response retrieval.");
