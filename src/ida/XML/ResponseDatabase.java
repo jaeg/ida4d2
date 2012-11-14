@@ -44,6 +44,18 @@ public class ResponseDatabase {
 				similarKeywords.add(keywordNodes.item(i));
 			}
 		}
+		
+		if (similarKeywords.size()==0)
+		{
+			for (int i=0; i<keywordNodes.getLength();i++)
+			{
+				if (keywordNodes.item(i).getFirstChild().getNodeValue().equals("NOKEYFOUND"))
+				{
+					similarKeywords.add(keywordNodes.item(keywordNodes.getLength()-1));
+				}
+			}
+			
+		}
 
 		// Get all the health functions for the keywords
 		double currentHealth = 0.0;
@@ -81,7 +93,8 @@ public class ResponseDatabase {
 				}
 			}
 			Random random = new Random();
-			return new Response(messages.get(random.nextInt(messages.size())));
+			String message = messages.get(random.nextInt(messages.size())).replace("&","Human").replace("*", "that");
+			return new Response(message);
 		}
 
 		return new Response("A failure occured in response retrieval.");
