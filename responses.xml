@@ -264,5 +264,16 @@
 			</Message>
 		</Messages>
 	</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5807285395743317">HELLO</Keyword>
+<Keyword weight="0.4389507205222699">HI</Keyword>
+<Keyword weight="0.5117645719771283">GREETINGS</Keyword>
+</Keywords>
+<Messages>
+<Message>Hello.</Message>
+<Message>Oh goodie, another human.</Message>
+</Messages>
+</Response>
 </Responses>
 
