@@ -15,8 +15,8 @@ public class UserMessage {
 	
 	private String userInput;
 	
-	public UserMessage(String userInput){
-		this.userInput = userInput;
+	public UserMessage(){
+		userInput = null;
 	}
 	
 	public LinkedList<String> splitMessageIntoKeywords(){
@@ -25,6 +25,10 @@ public class UserMessage {
 			list.add(word.toUpperCase());
 		}
 		return list;
+	}
+	
+	public void setMessage(String input){
+		this.userInput = input;
 	}
 
 }
