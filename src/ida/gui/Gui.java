@@ -1,8 +1,6 @@
 package ida.gui;
 
-import ida.XML.ResponseDatabase;
-import ida.responses.Response;
-import ida.user.UserMessage;
+import ida.ai.Ida;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -31,26 +29,21 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-
 public class Gui extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
 	private JFileChooser saveChoice;
-	private JTextArea logField;
+	public static JTextArea logField;
 	private JTextField submissionField;
-	private ResponseDatabase responseDatabase;
+	private Ida ida;
 
 	public Gui() {
 		JPanel conversationPanel = new JPanel();
 		JPanel entryPanel = new JPanel();
 		JPanel buttonPanel = new JPanel();
 		saveChoice = new JFileChooser();
-		try {
-			responseDatabase = new ResponseDatabase();
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
+		ida = new Ida();
 
 		this.setBorder(new EmptyBorder(10, 50, 10, 50));
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -68,7 +61,6 @@ public class Gui extends JPanel {
 		save.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				BufferedWriter writer;
 				if (saveChoice.showDialog(null, "Save") == JFileChooser.APPROVE_OPTION) {
 					try {
 						FileWriter fstream = new FileWriter(saveChoice.getSelectedFile());
@@ -133,8 +125,6 @@ public class Gui extends JPanel {
 		optionsList.setBackground(Color.BLUE);
 		add(optionsList);
 		optionsList.setPreferredSize(new Dimension(50, 50));
-
-
 
 		JButton submit = new JButton("Submit");
 		submit.addActionListener(new ActionListener() {
@@ -205,9 +195,7 @@ public class Gui extends JPanel {
 			}
 		});
 		buttonPanel.add(think);
-		buttonPanel.add(log);// Will pop up a JOptionPane that contains the full
-								// log window at the moment.(Kind of just an
-								// idea IDK if we should implement this or not.)
+		buttonPanel.add(log);
 		buttonPanel.add(quit);
 		add(buttonPanel);
 
@@ -215,19 +203,15 @@ public class Gui extends JPanel {
 		entryPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		buttonPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 
-		conversationLog.setBackground(Color.RED);
-		entryPanel.setBackground(Color.BLUE);
-		buttonPanel.setBackground(Color.BLUE);
-	
-		this.setBackground(Color.BLACK);
+		conversationLog.setBackground(Color.CYAN);
+		entryPanel.setBackground(Color.CYAN);
+		buttonPanel.setBackground(Color.CYAN);
+
+		this.setBackground(Color.GRAY);
 	}
 
 	private void submitAction() {
-		UserMessage message = new UserMessage(submissionField.getText());
-		Response response = responseDatabase.getResponse(message.splitMessageIntoKeywords());
-		logField.append("\nME: " + submissionField.getText());
-		logField.append("\nIDA: " + response);
-		Voice.sayIt(response);
+		ida.respondTo(submissionField.getText());
 		submissionField.setText("");
 	}
 
