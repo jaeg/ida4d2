@@ -34,6 +34,6 @@ public class Ida {
 		Gui.logField.append("\nME: " + input);
 		Response response = responseDatabase.getResponse(userMessage.splitMessageIntoKeywords());
 		Gui.logField.append("\nIDA: " + response);
-		Voice.sayIt(response);
+		//Voice.sayIt(response);
 	}
 }
