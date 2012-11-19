@@ -7,7 +7,8 @@ import ida.gui.Gui;
 
 public class Main {
 	
-	public static void main(String[] argv){
+	public static void main(String[] argv)
+	{
 //		Ida ida = new Ida();
 		JFrame frame = new JFrame("IDA4D2");
 		frame.getContentPane().add(new Gui());

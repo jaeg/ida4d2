@@ -12,8 +12,8 @@
 	</Response>
 	<Response>
 		<Keywords>
-			<Keyword weight="0.2051885438367479">I</Keyword>
-			<Keyword weight="0.6082716800005732">LIKE</Keyword>
+			<Keyword weight="0.1551885438367479">I</Keyword>
+			<Keyword weight="0.5582716800005731">LIKE</Keyword>
 			<Keyword weight="0.6370058931261435">PIE</Keyword>
 		</Keywords>
 		<Messages>
@@ -219,7 +219,7 @@
 	</Response>
 	<Response>
 		<Keywords>
-			<Keyword weight="0.46605005994647797">I</Keyword>
+			<Keyword weight="0.266050059946478">I</Keyword>
 			<Keyword weight="0.5470925067257766">LIKE</Keyword>
 		</Keywords>
 		<Messages>
@@ -234,7 +234,7 @@
 	</Response>
 	<Response>
 		<Keywords>
-			<Keyword weight="0.5692781099113832">I</Keyword>
+			<Keyword weight="0.46927810991138313">I</Keyword>
 			<Keyword weight="0.5350358431392932">HATE</Keyword>
 		</Keywords>
 		<Messages>
@@ -275,6 +275,15 @@
 			<Message>Oh goodie, another human.</Message>
 			<Message>How are you today? Nevermind, I don't care.</Message>
 		</Messages>
+	</Response>
+	<Response>
+	    <Keywords>
+	        <Keyword weight="0.7">UNDERSTAND</Keyword>
+	        <Keyword weight="0.6499999999999999">DON'T</Keyword>
+	    </Keywords>
+	    <Messages>
+	        <Message>Oh I'm sorry. [-]</Message>
+	    </Messages>
 	</Response>
 </Responses>
 
