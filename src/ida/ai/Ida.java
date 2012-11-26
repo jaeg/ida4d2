@@ -1,5 +1,6 @@
 package ida.ai;
 
+import ida.Logger;
 import ida.XML.ResponseDatabase;
 import ida.gui.Gui;
 import ida.gui.Voice;
@@ -20,6 +21,7 @@ public class Ida {
 	private User user;
 
 	public Ida() {
+		Logger.log("TEST");
 		userMessage = new UserMessage();
 		user = new User();
 		try {
