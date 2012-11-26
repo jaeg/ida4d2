@@ -72,10 +72,11 @@ public class ResponseDatabase
 				if (keywordNodes.item(i).getFirstChild().getNodeValue()
 						.equals("NOKEYFOUND"))
 				{
-					similarKeywords.add(keywordNodes.item(keywordNodes
-							.getLength() - 1));
+					similarKeywords.add(keywordNodes.item(i));
 				}
+
 			}
+
 
 		}
 
