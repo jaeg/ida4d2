@@ -14,13 +14,12 @@ public class Logger extends JPanel
 	public Logger()
 	{
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		this.setPreferredSize(new Dimension(300,200));
-		JScrollPane logPane = new JScrollPane();
+		//this.setPreferredSize(new Dimension(300,200));
+		JScrollPane logPane = new JScrollPane(log);
 		logPane.setPreferredSize(new Dimension(300,200));
-		add(logPane);
-		//log = new JTextArea();
 		
-		logPane.add(log);
+		//logPane.add(log);
+		add(logPane);
 		
 	}
 	
