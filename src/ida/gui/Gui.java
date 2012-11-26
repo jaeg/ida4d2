@@ -211,6 +211,7 @@ public class Gui extends JPanel {
 	}
 
 	private void submitAction() {
+		ida.learn(submissionField.getText());
 		ida.respondTo(submissionField.getText());
 		submissionField.setText("");
 	}
