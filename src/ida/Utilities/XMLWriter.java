@@ -74,7 +74,6 @@ public class XMLWriter
 		System.out.println(xmlString);
 	}
 	
-	//TODO - Save IDA's database to XML
 	public static void saveXML(Document doc) throws Exception
 	{
 		

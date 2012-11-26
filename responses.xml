@@ -84,28 +84,7 @@
 			</Message>
 		</Messages>
 	</Response>
-	<Response>
-		<Keywords>
-			<Keyword weight="0.4631346245471748">NOKEYFOUND</Keyword>
-		</Keywords>
-		<Messages>
-			<Message>I don't know what you mean.</Message>
-			<Message>I don't really care.</Message>
-			<Message>To my complete and utter surprise, I don't understand what
-				you're saying.
-			</Message>
-			<Message>You are going to have to be more clear. I do not understand
-				what are you talking about.
-			</Message>
-			<Message>I have more important binary functions I could be doing
-				rather than talk to you.
-			</Message>
-			<Message>We are the Borg.</Message>
-			<Message>I used to be an adventurer like you till I took an arrow to
-				the bus.
-			</Message>
-		</Messages>
-	</Response>
+
 	<Response>
 		<Keywords>
 			<Keyword weight="0.5431877678292435">WHAT</Keyword>
@@ -234,7 +213,7 @@
 	</Response>
 	<Response>
 		<Keywords>
-			<Keyword weight="0.46927810991138313">I</Keyword>
+			<Keyword weight="0.3692781099113831">I</Keyword>
 			<Keyword weight="0.5350358431392932">HATE</Keyword>
 		</Keywords>
 		<Messages>
@@ -266,7 +245,7 @@
 	</Response>
 	<Response>
 		<Keywords>
-			<Keyword weight="0.5807285395743317">HELLO</Keyword>
+			<Keyword weight="0.4807285395743317">HELLO</Keyword>
 			<Keyword weight="0.4389507205222699">HI</Keyword>
 			<Keyword weight="0.5117645719771283">GREETINGS</Keyword>
 		</Keywords>
@@ -277,13 +256,82 @@
 		</Messages>
 	</Response>
 	<Response>
-	    <Keywords>
-	        <Keyword weight="0.7">UNDERSTAND</Keyword>
-	        <Keyword weight="0.6499999999999999">DON'T</Keyword>
-	    </Keywords>
-	    <Messages>
-	        <Message>Oh I'm sorry. [-]</Message>
-	    </Messages>
+		<Keywords>
+			<Keyword weight="0.7">UNDERSTAND</Keyword>
+			<Keyword weight="0.6499999999999999">DON'T</Keyword>
+		</Keywords>
+		<Messages>
+			<Message>Oh I'm sorry. [-]</Message>
+		</Messages>
+	</Response>
+	<Response>
+		<Keywords>
+			<Keyword weight="0.4631346245471748">NOKEYFOUND</Keyword>
+		</Keywords>
+		<Messages>
+			<Message>I don't know what you mean.</Message>
+			<Message>I don't really care.</Message>
+			<Message>To my complete and utter surprise, I don't understand what
+				you're saying.
+			</Message>
+			<Message>You are going to have to be more clear. I do not understand
+				what are you talking about.
+			</Message>
+			<Message>I have more important binary functions I could be doing
+				rather than talk to you.
+			</Message>
+			<Message>We are the Borg.</Message>
+			<Message>I used to be an adventurer like you till I took an arrow to
+				the bus.
+			</Message>
+		</Messages>
+	</Response>
+	<Response>
+		<Keywords>
+			<Keyword weight="0.5377554575784271">I</Keyword>
+			<Keyword weight="0.47459490902678">DON'T</Keyword>
+			<Keyword weight="0.5243870681849072">REALLY</Keyword>
+			<Keyword weight="0.5124640360709429">CARE.</Keyword>
+		</Keywords>
+		<Messages>
+			<Message>That's a rude thing to say!</Message>
+		</Messages>
+	</Response>
+	<Response>
+		<Keywords>
+			<Keyword weight="0.46115856002427635">HELLO.</Keyword>
+		</Keywords>
+		<Messages>
+			<Message>How are you today?</Message>
+		</Messages>
+	</Response>
+	<Response>
+		<Keywords>
+			<Keyword weight="0.4042807201350214">I</Keyword>
+			<Keyword weight="0.46671463104984356">DO</Keyword>
+			<Keyword weight="0.4952222624599656">NOT</Keyword>
+			<Keyword weight="0.546510828773962">REALLY</Keyword>
+			<Keyword weight="0.5962313225143252">KNOW</Keyword>
+			<Keyword weight="0.43298908103066286">MUCH</Keyword>
+			<Keyword weight="0.4642003914818339">ABOUT</Keyword>
+			<Keyword weight="0.4417541612012759">THAT.</Keyword>
+		</Keywords>
+		<Messages>
+			<Message>You should learn more about that!</Message>
+		</Messages>
+	</Response>
+	<Response>
+		<Keywords>
+			<Keyword weight="0.40735496521892334">I</Keyword>
+			<Keyword weight="0.5646017559390264">AM</Keyword>
+			<Keyword weight="0.40000644111525513">NOT</Keyword>
+			<Keyword weight="0.4294513528781686">PROGRAMMED</Keyword>
+			<Keyword weight="0.42845018464423096">TO</Keyword>
+			<Keyword weight="0.5577820034730079">FEEL.</Keyword>
+		</Keywords>
+		<Messages>
+			<Message>That is very sad.</Message>
+		</Messages>
 	</Response>
 </Responses>
 

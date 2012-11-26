@@ -36,5 +36,10 @@ public class UserMessage {
 		Logger.log("Message recieved from from user: "+input+"\n");
 		this.userInput = input;
 	}
+	
+	@Override
+	public String toString(){
+		return userInput;
+	}
 
 }
