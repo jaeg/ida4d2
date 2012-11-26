@@ -1,5 +1,6 @@
 package ida.XML;
 
+import ida.Logger;
 import ida.responses.Response;
 
 import java.io.File;
@@ -55,6 +56,7 @@ public class ResponseDatabase
 	{
 
 		// Get the similar keyword nodes
+		Logger.log("Keywords from message that are similar to the database: ");
 		LinkedList<Node> similarKeywords = new LinkedList<Node>();
 		for (int i = 0; i < keywordNodes.getLength(); i++)
 		{
@@ -62,11 +64,14 @@ public class ResponseDatabase
 					.getNodeValue()))
 			{
 				similarKeywords.add(keywordNodes.item(i));
+				Logger.log(keywordNodes.item(i).getFirstChild().getNodeValue());
 			}
 		}
+		Logger.log("\n");
 
 		if (similarKeywords.size() == 0)
 		{
+			Logger.log("No keywords found\nResorting to fallback message.\n");
 			for (int i = 0; i < keywordNodes.getLength(); i++)
 			{
 				if (keywordNodes.item(i).getFirstChild().getNodeValue()
@@ -81,10 +86,11 @@ public class ResponseDatabase
 		}
 
 		// Get all the health functions for the keywords
+		Logger.log("Looking for best response\n");
 		double currentHealth = 0.0;
 		Node bestResponse = null;
 		double best = -1;
-
+		
 		for (int i = 0; i < similarKeywords.size(); i++)
 		{
 			if (i != 0)
@@ -115,6 +121,7 @@ public class ResponseDatabase
 
 		if (bestResponse != null)
 		{
+			Logger.log("Best response found\n");
 			Node messagesNode = bestResponse.getChildNodes().item(3);
 			int messagesNodeLength = messagesNode.getChildNodes().getLength();
 			LinkedList<String> messages = new LinkedList<String>();
@@ -133,12 +140,14 @@ public class ResponseDatabase
 
 			if (message.contains("[+]"))
 			{
+				Logger.log("Positive reinforcement encountered.\n");
 				message = message.replace("[+]", "");
 				train(lastSimilarKeywords, .1);
 			}
 
 			if (message.contains("[-]"))
 			{
+				Logger.log("Negative reinforcement encountered.\n");
 				message = message.replace("[-]", "");
 				train(lastSimilarKeywords, -.1);
 			}
@@ -153,6 +162,7 @@ public class ResponseDatabase
 
 	private void train(LinkedList<Node> keywords, double amount)
 	{
+		Logger.log("Training sequence engaged.\n");
 		if (lastResponse != null)
 		{
 			LinkedList<Node> keywordsList = new LinkedList<Node>();
