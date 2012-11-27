@@ -34,10 +34,12 @@ public class Gui extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private JFileChooser saveChoice;
-	public static JTextArea logField;
 	private JTextField submissionField;
 	private Ida ida;
-
+	private static final int TA_ROWS = 20;
+	private static final int TA_COLS = 35;
+	public static JTextArea logField = new JTextArea(TA_ROWS, TA_COLS);
+	
 	public Gui() {
 		JPanel conversationPanel = new JPanel();
 		JPanel entryPanel = new JPanel();
@@ -47,7 +49,8 @@ public class Gui extends JPanel {
 
 		this.setBorder(new EmptyBorder(10, 50, 10, 50));
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		conversationPanel.setLayout(new BoxLayout(conversationPanel, BoxLayout.X_AXIS));
+		conversationPanel.setLayout(new BoxLayout(conversationPanel,
+				BoxLayout.X_AXIS));
 		entryPanel.setLayout(new BoxLayout(entryPanel, BoxLayout.X_AXIS));
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
@@ -63,13 +66,16 @@ public class Gui extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (saveChoice.showDialog(null, "Save") == JFileChooser.APPROVE_OPTION) {
 					try {
-						FileWriter fstream = new FileWriter(saveChoice.getSelectedFile());
+						FileWriter fstream = new FileWriter(saveChoice
+								.getSelectedFile());
 						BufferedWriter out = new BufferedWriter(fstream);
 						out.write(logField.getText());
 						out.close();
-						JOptionPane.showMessageDialog(null, "Your chat log has been saved.");
+						JOptionPane.showMessageDialog(null,
+								"Your chat log has been saved.");
 					} catch (Exception ex) {
-						JOptionPane.showMessageDialog(null, "Error saving file!");
+						JOptionPane.showMessageDialog(null,
+								"Error saving file!");
 					}
 				}
 			}
@@ -81,13 +87,13 @@ public class Gui extends JPanel {
 		 * TODO: Implement "Clear Log", in which the entire conversation is
 		 * cleared. Should the conversation restart?
 		 */
-		// clear.addActionListener(new ActionListener() {
-		//
-		// @Override
-		// public void actionPerformed(ActionEvent e) {
-		//
-		// }
-		// });
+		clear.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				logField.setText("");
+			}
+		});
 
 		JMenuItem color = new JMenuItem("Color Scheme");
 
@@ -122,7 +128,6 @@ public class Gui extends JPanel {
 		optionsList.add(save);
 		optionsList.add(clear);
 		optionsList.add(color);
-		optionsList.setBackground(Color.BLUE);
 		add(optionsList);
 		optionsList.setPreferredSize(new Dimension(50, 50));
 
@@ -135,6 +140,8 @@ public class Gui extends JPanel {
 		});
 
 		logField = new JTextArea();
+		logField.setWrapStyleWord(true);
+		logField.setLineWrap(true);
 
 		/**
 		 * TODO: Set limit on user input length.
@@ -164,7 +171,7 @@ public class Gui extends JPanel {
 		JButton think = new JButton("Think for me");
 
 		/**
-		 * TODO: Implemement "Think For Me", in which Ida will response to
+		 * TODO: Implement "Think For Me", in which Ida will respond to
 		 * herself.
 		 */
 		// think.addActionListener(new ActionListener() {
@@ -180,13 +187,13 @@ public class Gui extends JPanel {
 		 * TODO: Implement "Full Text Log", a pop-up window containing a full
 		 * log of conversation.
 		 */
-		// log.addActionListener(new ActionListener() {
-		//
-		// @Override
-		// public void actionPerformed(ActionEvent e) {
-		//
-		// }
-		// });
+		log.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent arg0) {
+                JOptionPane.showMessageDialog(null, logField.getText());
+
+            }
+        });
 
 		JButton quit = new JButton("Quit");
 		quit.addActionListener(new ActionListener() {
@@ -203,11 +210,12 @@ public class Gui extends JPanel {
 		entryPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		buttonPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 
-		conversationLog.setBackground(Color.CYAN);
-		entryPanel.setBackground(Color.CYAN);
-		buttonPanel.setBackground(Color.CYAN);
+		optionsList.setBackground(Color.RED);
+		conversationLog.setBackground(Color.RED);
+		entryPanel.setBackground(Color.RED);
+		buttonPanel.setBackground(Color.RED);
 
-		this.setBackground(Color.GRAY);
+		this.setBackground(Color.BLACK);
 	}
 
 	private void submitAction() {
