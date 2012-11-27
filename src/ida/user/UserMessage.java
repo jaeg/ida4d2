@@ -26,7 +26,7 @@ public class UserMessage {
 		LinkedList<String> list = new LinkedList<String>();
 		for (String word: userInput.split("[\\p{P} \\t\\n\\r]")){
 			list.add(word.toUpperCase());
-			Logger.log(word);
+			Logger.log(word.toUpperCase() + " ");
 		}
 		Logger.log("\n");
 		return list;
