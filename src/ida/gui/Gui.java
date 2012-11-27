@@ -15,12 +15,10 @@ import java.io.FileWriter;
 
 import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
-import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -42,16 +40,18 @@ public class Gui extends JPanel {
 	public static JTextArea logField = new JTextArea(TA_ROWS, TA_COLS);
 
 	public Gui() {
+		JPanel menuPanel = new JPanel();
 		JPanel conversationPanel = new JPanel();
 		JPanel entryPanel = new JPanel();
 		JPanel buttonPanel = new JPanel();
 		saveChoice = new JFileChooser();
 		ida = new Ida();
-		try
-		{
-		     UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-		} catch(Exception e)
-		{}
+		try {
+			UIManager
+					.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+		} catch (Exception e) {
+		}
+
 		this.setBorder(new EmptyBorder(10, 50, 10, 50));
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		conversationPanel.setLayout(new BoxLayout(conversationPanel,
@@ -59,9 +59,7 @@ public class Gui extends JPanel {
 		entryPanel.setLayout(new BoxLayout(entryPanel, BoxLayout.X_AXIS));
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
-		JMenuBar optionsList = new JMenuBar();
-		ButtonGroup options = new ButtonGroup();
-		JMenuItem save = new JMenuItem("Save Log");
+		JButton save = new JButton("Save Chat");
 
 		/**
 		 * TODO: Implement saving chat log.
@@ -86,7 +84,7 @@ public class Gui extends JPanel {
 			}
 		});
 
-		JMenuItem clear = new JMenuItem("Clear Log");
+		JButton clear = new JButton("Clear Chat");
 
 		/**
 		 * TODO: Implement "Clear Log", in which the entire conversation is
@@ -100,12 +98,12 @@ public class Gui extends JPanel {
 			}
 		});
 
-		JMenuItem color = new JMenuItem("Color Scheme");
+		JButton idaLog = new JButton("IDA's Thoughts");
 
 		/**
-		 * TODO: Implement changing of color scheme.
+		 * TODO: Implement toggling for ida's thought log.
 		 */
-		// color.addActionListener(new ActionListener() {
+		// idaLog.addActionListener(new ActionListener() {
 		//
 		// @Override
 		// public void actionPerformed(ActionEvent e) {
@@ -113,13 +111,13 @@ public class Gui extends JPanel {
 		// }
 		// });
 
-		options.add(save);
+		menuPanel.add(save);
 
-		options.add(clear);
+		menuPanel.add(clear);
 
-		options.add(color);
+		menuPanel.add(idaLog);
 
-		optionsList.setBorder(new EmptyBorder(10, 10, 10, 10));
+		menuPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		try {
 			BufferedImage logo = ImageIO.read(new File("IDALOGO.gif"));
 			JLabel logoLabel = new JLabel(new ImageIcon(logo));
@@ -130,11 +128,8 @@ public class Gui extends JPanel {
 		}
 
 		conversationPanel.setPreferredSize(new Dimension(300, 300));
-		optionsList.add(save);
-		optionsList.add(clear);
-		optionsList.add(color);
-		add(optionsList);
-		optionsList.setPreferredSize(new Dimension(50, 50));
+		add(menuPanel);
+		menuPanel.setPreferredSize(new Dimension(50, 50));
 
 		JButton submit = new JButton("Submit");
 		submit.addActionListener(new ActionListener() {
@@ -152,7 +147,7 @@ public class Gui extends JPanel {
 		 * TODO: Set limit on user input length.
 		 */
 		JScrollPane conversationLog = new JScrollPane(logField);
-
+		
 		add(conversationLog);
 		conversationPanel.add(conversationLog);
 
@@ -172,18 +167,6 @@ public class Gui extends JPanel {
 		entryPanel.add(submit);
 		entryPanel.add(submissionField);
 		add(entryPanel);
-
-		JButton think = new JButton("Think for me");
-
-		/**
-		 * TODO: Implement "Think For Me", in which Ida will respond to herself.
-		 */
-		// think.addActionListener(new ActionListener() {
-		//
-		// @Override
-		// public void actionPerformed(ActionEvent e) {
-		// }
-		// });
 
 		JButton log = new JButton("Full Text Log");
 
@@ -205,22 +188,21 @@ public class Gui extends JPanel {
 				System.exit(0);
 			}
 		});
-		buttonPanel.add(think);
 		buttonPanel.add(log);
 		buttonPanel.add(quit);
 		add(buttonPanel);
 
-		conversationLog.setBorder(new EmptyBorder(10, 10, 10, 10));
+		conversationPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		entryPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		buttonPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-
-		/*optionsList.setBackground(Color.RED);
-		conversationLog.setBackground(Color.RED);
-		entryPanel.setBackground(Color.RED);
-		buttonPanel.setBackground(Color.RED);
-
-		this.setBackground(Color.BLACK);
-	*/}
+		
+		menuPanel.setBackground(Color.DARK_GRAY);
+		conversationPanel.setBackground(Color.GRAY);
+		entryPanel.setBackground(Color.DARK_GRAY);
+		buttonPanel.setBackground(Color.DARK_GRAY);
+		
+		this.setBackground(Color.DARK_GRAY);
+	}
 
 	private void submitAction() {
 		ida.learn(submissionField.getText());
