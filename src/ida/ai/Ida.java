@@ -46,20 +46,35 @@ public class Ida {
 		// Voice.sayIt(response);
 	}
 
-	public void learn(String input){
-		if (latestUserMessage != null && latestIdaMessage != null) {			
+	public void learn(String input) {
+		if (latestUserMessage != null && latestIdaMessage != null) {
 			String previousIda = latestIdaMessage.toUpperCase();
 			String[] keywords = previousIda.split("([.,!?:;'\"-]|\\s)+");
-			
-			String[] messages = new String[1];
-			messages[0] = input;
-			
-			try {
-				XMLWriter.writeResponseToFile("responses.xml", keywords, messages);
-			} catch (Exception e) {
-				Logger.log("Could not find the XML file to write to!");
-				e.printStackTrace();
+
+			if (isValid(keywords)) {
+				String[] messages = new String[1];
+				messages[0] = input;
+
+				try {
+					XMLWriter.writeResponseToFile("responses.xml", keywords, messages);
+				} catch (Exception e) {
+					Logger.log("Could not find the XML file to write to!");
+					e.printStackTrace();
+				}
 			}
 		}
+	}
+
+	private boolean isValid(String[] input) {
+		for (String keyword : input) {
+			if (keyword != "WHAT" || keyword != "HOW" || keyword != "ARE" || keyword != "WHY" || keyword != "YOU"
+					|| keyword != "WHO") {
+				return true;
+			}
+			else {
+				
+			}
+		}
+		return false;
 	}
 }
