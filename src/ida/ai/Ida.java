@@ -24,7 +24,7 @@ public class Ida {
 	private String latestUserMessage;
 
 	public Ida() {
-		Logger.log("TEST");
+		Logger.log("IDA4D2 Online....\n");
 		userMessage = new UserMessage();
 		user = new User();
 		try {
