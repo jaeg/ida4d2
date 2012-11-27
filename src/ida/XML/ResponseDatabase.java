@@ -26,8 +26,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class ResponseDatabase
-{
+public class ResponseDatabase {
 	Document doc;
 	NodeList keywordNodes;
 	Node lastResponse;
@@ -37,11 +36,8 @@ public class ResponseDatabase
 	 * Store keyword nodes for searching purposes. Node.getParent() should be
 	 * useful in this case.
 	 */
-	public ResponseDatabase() throws ParserConfigurationException,
-			SAXException, IOException
-	{
-		DocumentBuilderFactory docFactory = DocumentBuilderFactory
-				.newInstance();
+	public ResponseDatabase() throws ParserConfigurationException, SAXException, IOException {
+		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 		doc = docBuilder.parse("responses.xml");
 
@@ -52,36 +48,27 @@ public class ResponseDatabase
 	 * Find keywords similar Group with responses Compare weights for the
 	 * response pick best response.
 	 */
-	public Response getResponse(LinkedList<String> keywords)
-	{
+	public Response getResponse(LinkedList<String> keywords) {
 
 		// Get the similar keyword nodes
 		Logger.log("Keywords from message that are similar to the database: ");
 		LinkedList<Node> similarKeywords = new LinkedList<Node>();
-		for (int i = 0; i < keywordNodes.getLength(); i++)
-		{
-			if (keywords.contains(keywordNodes.item(i).getFirstChild()
-					.getNodeValue()))
-			{
+		for (int i = 0; i < keywordNodes.getLength(); i++) {
+			if (keywords.contains(keywordNodes.item(i).getFirstChild().getNodeValue())) {
 				similarKeywords.add(keywordNodes.item(i));
 				Logger.log(keywordNodes.item(i).getFirstChild().getNodeValue());
 			}
 		}
 		Logger.log("\n");
 
-		if (similarKeywords.size() == 0)
-		{
+		if (similarKeywords.size() == 0) {
 			Logger.log("No keywords found\nResorting to fallback message.\n");
-			for (int i = 0; i < keywordNodes.getLength(); i++)
-			{
-				if (keywordNodes.item(i).getFirstChild().getNodeValue()
-						.equals("NOKEYFOUND"))
-				{
+			for (int i = 0; i < keywordNodes.getLength(); i++) {
+				if (keywordNodes.item(i).getFirstChild().getNodeValue().equals("NOKEYFOUND")) {
 					similarKeywords.add(keywordNodes.item(i));
 				}
 
 			}
-
 
 		}
 
@@ -90,63 +77,47 @@ public class ResponseDatabase
 		double currentHealth = 0.0;
 		Node bestResponse = null;
 		double best = -1;
-		
-		for (int i = 0; i < similarKeywords.size(); i++)
-		{
-			if (i != 0)
-			{
-				if (similarKeywords.get(i).getParentNode() != similarKeywords
-						.get(i - 1).getParentNode())
-				{
-					if (currentHealth >= best)
-					{
-						bestResponse = similarKeywords.get(i - 1)
-								.getParentNode().getParentNode();
+
+		for (int i = 0; i < similarKeywords.size(); i++) {
+			if (i != 0) {
+				if (similarKeywords.get(i).getParentNode() != similarKeywords.get(i - 1).getParentNode()) {
+					if (currentHealth >= best) {
+						bestResponse = similarKeywords.get(i - 1).getParentNode().getParentNode();
 						best = currentHealth;
 					}
 					currentHealth = 0;
 				}
 			}
-			String weight = similarKeywords.get(i).getAttributes()
-					.getNamedItem("weight").getNodeValue();
+			String weight = similarKeywords.get(i).getAttributes().getNamedItem("weight").getNodeValue();
 			currentHealth += Double.parseDouble(weight);
 		}
 
-		if (currentHealth >= best)
-		{
-			bestResponse = similarKeywords.get(similarKeywords.size() - 1)
-					.getParentNode().getParentNode();
+		if (currentHealth >= best) {
+			bestResponse = similarKeywords.get(similarKeywords.size() - 1).getParentNode().getParentNode();
 			best = currentHealth;
 		}
 
-		if (bestResponse != null)
-		{
+		if (bestResponse != null) {
 			Logger.log("Best response found\n");
 			Node messagesNode = bestResponse.getChildNodes().item(3);
 			int messagesNodeLength = messagesNode.getChildNodes().getLength();
 			LinkedList<String> messages = new LinkedList<String>();
-			for (int i = 0; i < messagesNodeLength; i++)
-			{
-				String content = messagesNode.getChildNodes().item(i)
-						.getTextContent();
-				if (i % 2 != 0)
-				{
+			for (int i = 0; i < messagesNodeLength; i++) {
+				String content = messagesNode.getChildNodes().item(i).getTextContent();
+				if (i % 2 != 0) {
 					messages.add(content);
 				}
 			}
 			Random random = new Random();
-			String message = messages.get(random.nextInt(messages.size()))
-					.replace("&", "Human").replace("*", "that");
+			String message = messages.get(random.nextInt(messages.size())).replace("&", "Human").replace("*", "that");
 
-			if (message.contains("[+]"))
-			{
+			if (message.contains("[+]")) {
 				Logger.log("Positive reinforcement encountered.\n");
 				message = message.replace("[+]", "");
 				train(lastSimilarKeywords, .1);
 			}
 
-			if (message.contains("[-]"))
-			{
+			if (message.contains("[-]")) {
 				Logger.log("Negative reinforcement encountered.\n");
 				message = message.replace("[-]", "");
 				train(lastSimilarKeywords, -.1);
@@ -160,49 +131,38 @@ public class ResponseDatabase
 		return new Response("A failure occured in response retrieval.");
 	}
 
-	private void train(LinkedList<Node> keywords, double amount)
-	{
+	private void train(LinkedList<Node> keywords, double amount) {
 		Logger.log("Training sequence engaged.\n");
-		if (lastResponse != null)
-		{
+		if (lastResponse != null) {
 			LinkedList<Node> keywordsList = new LinkedList<Node>();
 			Node keywordsNode = lastResponse.getChildNodes().item(1);
 			NodeList keywordsNodeChildren = keywordsNode.getChildNodes();
-			for (int i = 0; i < keywordsNodeChildren.getLength(); i++)
-			{
-				if (i % 2 != 0)
-				{
+			for (int i = 0; i < keywordsNodeChildren.getLength(); i++) {
+				if (i % 2 != 0) {
 					keywordsList.add(keywordsNodeChildren.item(i));
 				}
 			}
 
-			for (Node item : keywordsList)
-			{
-				if (keywords.contains(item))
-				{
+			for (Node item : keywordsList) {
+				if (keywords.contains(item)) {
 					NamedNodeMap attribute = item.getAttributes();
 					Node weightAttribute = attribute.getNamedItem("weight");
-					Double weight = Double.parseDouble(weightAttribute
-							.getNodeValue());
+					Double weight = Double.parseDouble(weightAttribute.getNodeValue());
 					weight += amount;
 					weightAttribute.setNodeValue(weight.toString());
 				}
 			}
 
-			try
-			{
+			try {
 				saveDOM();
-			} catch (Exception ex)
-			{
+			} catch (Exception ex) {
 				JOptionPane.showMessageDialog(null, "Error amending DOM");
 			}
 		}
 	}
 
-	private void saveDOM() throws Exception
-	{
-		Transformer transformer = TransformerFactory.newInstance()
-				.newTransformer();
+	private void saveDOM() throws Exception {
+		Transformer transformer = TransformerFactory.newInstance().newTransformer();
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 
 		// initialize StreamResult with File object to save to file
@@ -216,7 +176,6 @@ public class ResponseDatabase
 		PrintWriter out = new PrintWriter(file);
 		out.println(xmlString);
 		out.close();
-		// System.out.println(xmlString);
 	}
 
 }
