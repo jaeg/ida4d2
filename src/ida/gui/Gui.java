@@ -27,6 +27,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 public class Gui extends JPanel {
@@ -39,14 +40,18 @@ public class Gui extends JPanel {
 	private static final int TA_ROWS = 20;
 	private static final int TA_COLS = 35;
 	public static JTextArea logField = new JTextArea(TA_ROWS, TA_COLS);
-	
+
 	public Gui() {
 		JPanel conversationPanel = new JPanel();
 		JPanel entryPanel = new JPanel();
 		JPanel buttonPanel = new JPanel();
 		saveChoice = new JFileChooser();
 		ida = new Ida();
-
+		try
+		{
+		     UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+		} catch(Exception e)
+		{}
 		this.setBorder(new EmptyBorder(10, 50, 10, 50));
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		conversationPanel.setLayout(new BoxLayout(conversationPanel,
@@ -171,8 +176,7 @@ public class Gui extends JPanel {
 		JButton think = new JButton("Think for me");
 
 		/**
-		 * TODO: Implement "Think For Me", in which Ida will respond to
-		 * herself.
+		 * TODO: Implement "Think For Me", in which Ida will respond to herself.
 		 */
 		// think.addActionListener(new ActionListener() {
 		//
@@ -189,11 +193,11 @@ public class Gui extends JPanel {
 		 */
 		log.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent arg0) {
-                JOptionPane.showMessageDialog(null, logField.getText());
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, logField.getText());
 
-            }
-        });
+			}
+		});
 
 		JButton quit = new JButton("Quit");
 		quit.addActionListener(new ActionListener() {
@@ -210,13 +214,13 @@ public class Gui extends JPanel {
 		entryPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		buttonPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 
-		optionsList.setBackground(Color.RED);
+		/*optionsList.setBackground(Color.RED);
 		conversationLog.setBackground(Color.RED);
 		entryPanel.setBackground(Color.RED);
 		buttonPanel.setBackground(Color.RED);
 
 		this.setBackground(Color.BLACK);
-	}
+	*/}
 
 	private void submitAction() {
 		ida.learn(submissionField.getText());
