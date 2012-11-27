@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -53,23 +54,23 @@ public class ResponseDatabase {
 		// Get the similar keyword nodes
 		Logger.log("Keywords from message that are similar to the database: ");
 		LinkedList<Node> similarKeywords = new LinkedList<Node>();
+		ArrayList<String> foundWords = new ArrayList<String>();
 		for (int i = 0; i < keywordNodes.getLength(); i++) {
 			if (keywords.contains(keywordNodes.item(i).getFirstChild().getNodeValue())) {
 				similarKeywords.add(keywordNodes.item(i));
 				Logger.log(keywordNodes.item(i).getFirstChild().getNodeValue());
+				foundWords.add(keywordNodes.item(i).getFirstChild().getNodeValue());
 			}
 		}
 		Logger.log("\n");
 
-		if (similarKeywords.size() == 0) {
+		if (similarKeywords.size() == 0 || invalidKeywords(foundWords)) {
 			Logger.log("No keywords found\nResorting to fallback message.\n");
 			for (int i = 0; i < keywordNodes.getLength(); i++) {
 				if (keywordNodes.item(i).getFirstChild().getNodeValue().equals("NOKEYFOUND")) {
 					similarKeywords.add(keywordNodes.item(i));
 				}
-
 			}
-
 		}
 
 		// Get all the health functions for the keywords
@@ -176,6 +177,16 @@ public class ResponseDatabase {
 		PrintWriter out = new PrintWriter(file);
 		out.println(xmlString);
 		out.close();
+	}
+	
+	private boolean invalidKeywords(ArrayList<String> list){
+		for (String keyword: list){
+			if (keyword != "WHAT" || keyword != "HOW" || keyword != "ARE" || keyword != "WHY" || keyword != "YOU"
+					|| keyword != "WHO"){
+				return false;
+			}
+		}
+		return false;
 	}
 
 }
