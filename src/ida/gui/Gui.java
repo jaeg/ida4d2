@@ -196,12 +196,12 @@ public class Gui extends JPanel {
 		entryPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		buttonPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
-		menuPanel.setBackground(Color.DARK_GRAY);
+		menuPanel.setBackground(new Color(69,69,69));
 		conversationPanel.setBackground(Color.GRAY);
-		entryPanel.setBackground(Color.DARK_GRAY);
-		buttonPanel.setBackground(Color.DARK_GRAY);
+		entryPanel.setBackground(new Color(69,69,69));
+		buttonPanel.setBackground(new Color(69,69,69));
 		
-		this.setBackground(Color.DARK_GRAY);
+		this.setBackground(new Color(69,69,69));
 	}
 
 	private void submitAction() {
