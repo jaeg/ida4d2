@@ -1,5 +1,6 @@
 package ida.gui;
 
+import ida.Logger;
 import ida.ai.Ida;
 
 import java.awt.Color;
@@ -37,8 +38,9 @@ public class Gui extends JPanel {
 	private static final int TA_ROWS = 20;
 	private static final int TA_COLS = 35;
 	public static JTextArea logField = new JTextArea(TA_ROWS, TA_COLS);
-
 	public Gui() {
+		new Logger();
+		
 		try {
 			UIManager
 					.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
@@ -51,7 +53,7 @@ public class Gui extends JPanel {
 		JPanel buttonPanel = new JPanel();
 		saveChoice = new JFileChooser();
 		ida = new Ida();
-		
+
 		this.setBorder(new EmptyBorder(10, 50, 10, 50));
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		conversationPanel.setLayout(new BoxLayout(conversationPanel,
@@ -60,7 +62,7 @@ public class Gui extends JPanel {
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
 		JButton save = new JButton("Save Chat");
-
+	
 		/**
 		 * TODO: Implement saving chat log ((into a .txt format.))
 		 */
@@ -80,6 +82,8 @@ public class Gui extends JPanel {
 						JOptionPane.showMessageDialog(null,
 								"Error saving file!");
 					}
+					
+										
 				}
 			}
 		});
@@ -94,22 +98,10 @@ public class Gui extends JPanel {
 			}
 		});
 
-		JButton idaLog = new JButton("IDA's Thoughts");
-
-		/**
-		 * TODO: Implement toggling for ida's thought log.
-		 */
-		// idaLog.addActionListener(new ActionListener() {
-		//
-		// @Override
-		// public void actionPerformed(ActionEvent e) {
-		//
-		// }
-		// });
+		
 
 		menuPanel.add(save);
 		menuPanel.add(clear);
-		menuPanel.add(idaLog);
 
 		try {
 			BufferedImage logo = ImageIO.read(new File("IDALOGO.gif"));
@@ -120,7 +112,7 @@ public class Gui extends JPanel {
 			System.out.println(ex);
 		}
 
-		conversationPanel.setPreferredSize(new Dimension(300, 300));
+		conversationPanel.setPreferredSize(new Dimension(365, 365));
 		add(menuPanel);
 		menuPanel.setPreferredSize(new Dimension(50, 50));
 
@@ -177,13 +169,24 @@ public class Gui extends JPanel {
 				System.exit(0);
 			}
 		});
-		buttonPanel.add(log);
+		JButton idaLog = new JButton("IDA's Thoughts");
+
+		idaLog.addActionListener(new ActionListener() {
+		
+		 @Override
+		 public void actionPerformed(ActionEvent e) {
+			 Logger.showLog(true);
+		
+		 }
+		 });
+		
+		buttonPanel.add(idaLog);
 		buttonPanel.add(quit);
 		add(buttonPanel);
 
 		conversationPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		entryPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-		buttonPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+		buttonPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		menuPanel.setBackground(new Color(69, 69, 69));
 		conversationPanel.setBackground(Color.GRAY);
