@@ -53,7 +53,7 @@ class ParserDemo {
 		System.out.println();
 
 		// This option shows loading and using an explicit tokenizer
-		String sent2 = "This is another sentence.";
+		String sent2 = "Matt likes to eat spaghetti.";
 		TokenizerFactory<CoreLabel> tokenizerFactory = PTBTokenizer.factory(new CoreLabelTokenFactory(), "");
 		List<CoreLabel> rawWords2 = tokenizerFactory.getTokenizer(new StringReader(sent2)).tokenize();
 		parse = lp.apply(rawWords2);
