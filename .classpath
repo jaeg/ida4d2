@@ -5,5 +5,9 @@
 	<classpathentry kind="lib" path="/ELIZA/Libraries/gtranslateapi-1.0.jar"/>
 	<classpathentry kind="lib" path="Libraries/guava-13.0.1.jar"/>
 	<classpathentry kind="lib" path="Libraries/jl1.0.jar"/>
+	<classpathentry kind="lib" path="Libraries/stanford-parser-2.0.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="Libraries/stanford-parser-2.0.4-models.jar"/>
+	<classpathentry kind="lib" path="Libraries/stanford-parser-2.0.4-sources.jar"/>
+	<classpathentry kind="lib" path="Libraries/stanford-parser.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

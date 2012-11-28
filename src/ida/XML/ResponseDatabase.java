@@ -58,8 +58,6 @@ public class ResponseDatabase {
 		for (int i = 0; i < keywordNodes.getLength(); i++) {
 			if (keywords.contains(keywordNodes.item(i).getFirstChild().getNodeValue())) {
 				similarKeywords.add(keywordNodes.item(i));
-				Logger.log(keywordNodes.item(i).getFirstChild().getNodeValue());
-				foundWords.add(keywordNodes.item(i).getFirstChild().getNodeValue());
 			}
 		}
 		Logger.log("\n");
@@ -85,12 +83,15 @@ public class ResponseDatabase {
 					if (currentHealth >= best) {
 						bestResponse = similarKeywords.get(i - 1).getParentNode().getParentNode();
 						best = currentHealth;
+						Logger.log("Testing for another response.\n");
+						Logger.log("Current best response is: "+ bestResponse.getTextContent().trim()+"\n");
 					}
 					currentHealth = 0;
 				}
 			}
 			String weight = similarKeywords.get(i).getAttributes().getNamedItem("weight").getNodeValue();
 			currentHealth += Double.parseDouble(weight);
+			Logger.log("Weight for "+ similarKeywords.get(i).getTextContent()+": " + weight + "\n");
 		}
 
 		if (currentHealth >= best) {
@@ -178,11 +179,11 @@ public class ResponseDatabase {
 		out.println(xmlString);
 		out.close();
 	}
-	
-	private boolean invalidKeywords(ArrayList<String> list){
-		for (String keyword: list){
+
+	private boolean invalidKeywords(ArrayList<String> list) {
+		for (String keyword : list) {
 			if (keyword != "WHAT" || keyword != "HOW" || keyword != "ARE" || keyword != "WHY" || keyword != "YOU"
-					|| keyword != "WHO"){
+					|| keyword != "WHO") {
 				return false;
 			}
 		}

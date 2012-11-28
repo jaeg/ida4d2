@@ -36,9 +36,9 @@ public class Ida {
 
 	public void respondTo(String input) {
 		userMessage.setMessage(input);
-		Gui.logField.append("\nME: " + input);
+		Gui.logField.append("ME: " + input + "\n");
 		Response response = responseDatabase.getResponse(userMessage.splitMessageIntoKeywords());
-		Gui.logField.append("\nIDA: " + response);
+		Gui.logField.append("IDA: " + response + "\n");
 
 		latestUserMessage = userMessage.toString();
 		latestIdaMessage = response.toString();
