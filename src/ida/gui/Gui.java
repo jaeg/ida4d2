@@ -39,18 +39,19 @@ public class Gui extends JPanel {
 	public static JTextArea logField = new JTextArea(TA_ROWS, TA_COLS);
 
 	public Gui() {
-		JPanel menuPanel = new JPanel();
-		JPanel conversationPanel = new JPanel();
-		JPanel entryPanel = new JPanel();
-		JPanel buttonPanel = new JPanel();
-		saveChoice = new JFileChooser();
-		ida = new Ida();
 		try {
 			UIManager
 					.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 		} catch (Exception e) {
 		}
 
+		JPanel menuPanel = new JPanel();
+		JPanel conversationPanel = new JPanel();
+		JPanel entryPanel = new JPanel();
+		JPanel buttonPanel = new JPanel();
+		saveChoice = new JFileChooser();
+		ida = new Ida();
+		
 		this.setBorder(new EmptyBorder(10, 50, 10, 50));
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		conversationPanel.setLayout(new BoxLayout(conversationPanel,
