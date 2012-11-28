@@ -98,20 +98,10 @@ public class Gui extends JPanel {
 			}
 		});
 
-		JButton idaLog = new JButton("IDA's Thoughts");
-
-		idaLog.addActionListener(new ActionListener() {
 		
-		 @Override
-		 public void actionPerformed(ActionEvent e) {
-			 Logger.showLog(true);
-		
-		 }
-		 });
 
 		menuPanel.add(save);
 		menuPanel.add(clear);
-		menuPanel.add(idaLog);
 
 		try {
 			BufferedImage logo = ImageIO.read(new File("IDALOGO.gif"));
@@ -122,7 +112,7 @@ public class Gui extends JPanel {
 			System.out.println(ex);
 		}
 
-		conversationPanel.setPreferredSize(new Dimension(300, 300));
+		conversationPanel.setPreferredSize(new Dimension(365, 365));
 		add(menuPanel);
 		menuPanel.setPreferredSize(new Dimension(50, 50));
 
@@ -179,13 +169,24 @@ public class Gui extends JPanel {
 				System.exit(0);
 			}
 		});
-		buttonPanel.add(log);
+		JButton idaLog = new JButton("IDA's Thoughts");
+
+		idaLog.addActionListener(new ActionListener() {
+		
+		 @Override
+		 public void actionPerformed(ActionEvent e) {
+			 Logger.showLog(true);
+		
+		 }
+		 });
+		
+		buttonPanel.add(idaLog);
 		buttonPanel.add(quit);
 		add(buttonPanel);
 
 		conversationPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		entryPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-		buttonPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+		buttonPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		menuPanel.setBackground(new Color(69, 69, 69));
 		conversationPanel.setBackground(Color.GRAY);
