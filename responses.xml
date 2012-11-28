@@ -563,16 +563,16 @@
 			<Message>I'm glad to hear that.</Message>
 		</Messages>
 	</Response>
-<Response>
-<Keywords>
-<Keyword weight="0.4484939939729002">OH</Keyword>
-<Keyword weight="0.5831261783089383">GOODIE</Keyword>
-<Keyword weight="0.5778967653280873">ANOTHER</Keyword>
-<Keyword weight="0.5662089398545551">HUMAN</Keyword>
-</Keywords>
-<Messages>
-<Message>What's wrong with being a human?</Message>
-</Messages>
-</Response>
+	<Response>
+		<Keywords>
+			<Keyword weight="0.4484939939729002">OH</Keyword>
+			<Keyword weight="0.5831261783089383">GOODIE</Keyword>
+			<Keyword weight="0.5778967653280873">ANOTHER</Keyword>
+			<Keyword weight="0.5662089398545551">HUMAN</Keyword>
+		</Keywords>
+		<Messages>
+			<Message>What's wrong with being a human?</Message>
+		</Messages>
+	</Response>
 </Responses>
 

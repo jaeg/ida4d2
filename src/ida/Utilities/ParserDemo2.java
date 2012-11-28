@@ -65,7 +65,7 @@ class ParserDemo2 {
 //			System.out.println();
 //		}
 
-		String sent3 = "This is one last test!";
+		String sent3 = "This is my favorite Java tool!";
 		lp.apply(sent3).pennPrint();
 	}
 
