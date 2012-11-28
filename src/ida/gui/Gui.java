@@ -19,7 +19,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
-import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -62,7 +61,7 @@ public class Gui extends JPanel {
 		JButton save = new JButton("Save Chat");
 
 		/**
-		 * TODO: Implement saving chat log.
+		 * TODO: Implement saving chat log ((into a .txt format.))
 		 */
 		save.addActionListener(new ActionListener() {
 			@Override
@@ -86,10 +85,6 @@ public class Gui extends JPanel {
 
 		JButton clear = new JButton("Clear Chat");
 
-		/**
-		 * TODO: Implement "Clear Log", in which the entire conversation is
-		 * cleared. Should the conversation restart?
-		 */
 		clear.addActionListener(new ActionListener() {
 
 			@Override
@@ -112,12 +107,9 @@ public class Gui extends JPanel {
 		// });
 
 		menuPanel.add(save);
-
 		menuPanel.add(clear);
-
 		menuPanel.add(idaLog);
 
-		menuPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		try {
 			BufferedImage logo = ImageIO.read(new File("IDALOGO.gif"));
 			JLabel logoLabel = new JLabel(new ImageIcon(logo));
@@ -147,7 +139,7 @@ public class Gui extends JPanel {
 		 * TODO: Set limit on user input length.
 		 */
 		JScrollPane conversationLog = new JScrollPane(logField);
-		
+
 		add(conversationLog);
 		conversationPanel.add(conversationLog);
 
@@ -170,10 +162,6 @@ public class Gui extends JPanel {
 
 		JButton log = new JButton("Full Text Log");
 
-		/**
-		 * TODO: Implement "Full Text Log", a pop-up window containing a full
-		 * log of conversation.
-		 */
 		log.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent arg0) {
@@ -195,13 +183,13 @@ public class Gui extends JPanel {
 		conversationPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		entryPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		buttonPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-		
-		menuPanel.setBackground(new Color(69,69,69));
+
+		menuPanel.setBackground(new Color(69, 69, 69));
 		conversationPanel.setBackground(Color.GRAY);
-		entryPanel.setBackground(new Color(69,69,69));
-		buttonPanel.setBackground(new Color(69,69,69));
-		
-		this.setBackground(new Color(69,69,69));
+		entryPanel.setBackground(new Color(69, 69, 69));
+		buttonPanel.setBackground(new Color(69, 69, 69));
+
+		this.setBackground(new Color(69, 69, 69));
 	}
 
 	private void submitAction() {
