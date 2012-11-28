@@ -18,11 +18,7 @@ public class Main {
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
-		JFrame logFrame = new JFrame("Log window");
-		logFrame.getContentPane().add(new Logger());
-		logFrame.pack();
-		logFrame.setVisible(true);
-		logFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
 		
 	}
 
