@@ -45,6 +45,7 @@ class ParserDemo2 {
 			}
 			String sent2 = ("I like riding my bike.");
 			Tokenizer<? extends HasWord> toke = tlp.getTokenizerFactory().getTokenizer(new StringReader(sent2));
+			@SuppressWarnings("unused")
 			List<? extends HasWord> sentence2 = toke.tokenize();
 			List<List<? extends HasWord>> tmp = new ArrayList<List<? extends HasWord>>();
 			tmp.add(sentence);
@@ -60,7 +61,7 @@ class ParserDemo2 {
 			System.out.println();
 
 			GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);
-			Collection tdl = gs.typedDependenciesCCprocessed(true);
+			Collection<?> tdl = gs.typedDependenciesCCprocessed(true);
 			System.out.println(tdl);
 			System.out.println();
 		}
