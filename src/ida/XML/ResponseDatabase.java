@@ -84,9 +84,9 @@ public class ResponseDatabase {
 			if (i != 0) {
 				if (similarKeywords.get(i).getParentNode() != similarKeywords.get(i - 1).getParentNode()) {
 					if (currentHealth >= best) {
+						Logger.log("Found a better response.\n");
 						bestResponse = similarKeywords.get(i - 1).getParentNode().getParentNode();
 						best = currentHealth;
-						Logger.log("Testing for another response.\n");
 					}
 					currentHealth = 0;
 				}
