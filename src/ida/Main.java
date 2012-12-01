@@ -1,9 +1,8 @@
 package ida;
 
-import javax.swing.JFrame;
-
-import ida.ai.Ida;
 import ida.gui.Gui;
+
+import javax.swing.JFrame;
 
 public class Main {
 	
