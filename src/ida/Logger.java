@@ -13,6 +13,8 @@ public class Logger extends JPanel
 	private static final long serialVersionUID = 1L;
 	static JTextArea log = new JTextArea();
 	private static JFrame logFrame;
+	private static boolean currentState = false;
+	
 	public Logger()
 	{
 		logFrame = new JFrame("Log window");
@@ -28,6 +30,7 @@ public class Logger extends JPanel
 		
 		logFrame.pack();
 		logFrame.setVisible(true);
+		currentState = true;
 		logFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 	}
@@ -37,9 +40,10 @@ public class Logger extends JPanel
 		log.append(message);
 	}
 	
-	public static void showLog(boolean flag)
+	public static void toggleLog()
 	{
-		logFrame.setVisible(flag);
+		logFrame.setVisible(!currentState);
+		currentState = !currentState;
 	}
 
 }

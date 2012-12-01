@@ -175,8 +175,7 @@ public class Gui extends JPanel {
 		
 		 @Override
 		 public void actionPerformed(ActionEvent e) {
-			 Logger.showLog(true);
-		
+			 Logger.toggleLog();
 		 }
 		 });
 		
@@ -197,6 +196,8 @@ public class Gui extends JPanel {
 	}
 
 	private void submitAction() {
+		Logger.log("\n");
+		Logger.log("User sent: " + submissionField.getText() + "\n");
 		ida.learn(submissionField.getText());
 		ida.respondTo(submissionField.getText());
 		submissionField.setText("");
