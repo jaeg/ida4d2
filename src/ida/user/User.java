@@ -3,15 +3,17 @@ package ida.user;
 public class User {
 	
 	private String userName;
-	public boolean nameIsSet;
 	
 	public User(){
-		nameIsSet = false;
+		userName = "Human";
 	}
 	
 	public void setName(String name){
-		userName = name;
-		nameIsSet = true;
+		this.userName = name;
+	}
+	
+	public String getName(){
+		return userName;
 	}
 
 }

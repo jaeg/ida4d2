@@ -1,12 +1,11 @@
 package ida.ai;
 
 import ida.Logger;
+import ida.Utilities.LanguageUtility;
 import ida.Utilities.XMLWriter;
 import ida.XML.ResponseDatabase;
 import ida.gui.Gui;
-import ida.gui.Voice;
 import ida.responses.Response;
-import ida.user.User;
 import ida.user.UserMessage;
 
 /**
@@ -19,14 +18,15 @@ public class Ida {
 
 	private UserMessage userMessage;
 	private ResponseDatabase responseDatabase;
-	private User user;
 	private String latestIdaMessage;
 	private String latestUserMessage;
+	private LanguageUtility NLP;
 
 	public Ida() {
 		Logger.log("IDA4D2 Online....\n");
 		userMessage = new UserMessage();
-		user = new User();
+		NLP = new LanguageUtility();
+
 		try {
 			responseDatabase = new ResponseDatabase();
 		} catch (Exception e) {
@@ -37,8 +37,20 @@ public class Ida {
 	public void respondTo(String input) {
 		userMessage.setMessage(input);
 		Gui.logField.append("ME: " + input + "\n");
-		Response response = responseDatabase.getResponse(userMessage.splitMessageIntoKeywords());
+
+		NLP.setSentence(input);
+
+		Response response;
+		if (!NLP.specialSentence()) {
+			Logger.log("Typical sentence. Searching database.\n");
+			response = responseDatabase.getResponse(userMessage.splitMessageIntoKeywords());
+		} else {
+			Logger.log("Special sentence. Using LanguageUtility.\n");
+			response = NLP.respond();
+		}
 		Gui.logField.append("IDA: " + response + "\n");
+		
+		Logger.log("IDA responded with: " + response + "\n");
 
 		latestUserMessage = userMessage.toString();
 		latestIdaMessage = response.toString();

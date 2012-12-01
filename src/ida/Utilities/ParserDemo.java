@@ -46,17 +46,17 @@ class ParserDemo {
 
 	public static void demoAPI(LexicalizedParser lp) {
 		// This option shows parsing a list of correctly tokenized words
-		String[] sent = { "This", "is", "an", "easy", "sentence", "." };
-		List<CoreLabel> rawWords = Sentence.toCoreLabelList(sent);
-		Tree parse = lp.apply(rawWords);
-		parse.pennPrint();
-		System.out.println();
+//		String[] sent = { "This", "is", "an", "easy", "sentence", "." };
+//		List<CoreLabel> rawWords = Sentence.toCoreLabelList(sent);
+//		Tree parse = lp.apply(rawWords);
+//		parse.pennPrint();
+//		System.out.println();
 
 		// This option shows loading and using an explicit tokenizer
-		String sent2 = "Matt likes to eat spaghetti.";
+		String sent2 = "I hate Pinterest.";
 		TokenizerFactory<CoreLabel> tokenizerFactory = PTBTokenizer.factory(new CoreLabelTokenFactory(), "");
 		List<CoreLabel> rawWords2 = tokenizerFactory.getTokenizer(new StringReader(sent2)).tokenize();
-		parse = lp.apply(rawWords2);
+		Tree parse = lp.apply(rawWords2);
 
 		TreebankLanguagePack tlp = new PennTreebankLanguagePack();
 		GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();

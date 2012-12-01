@@ -2,6 +2,7 @@ package ida.XML;
 
 import ida.Logger;
 import ida.responses.Response;
+import ida.user.User;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,10 +29,11 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class ResponseDatabase {
-	Document doc;
-	NodeList keywordNodes;
-	Node lastResponse;
-	LinkedList<Node> lastSimilarKeywords;
+	private Document doc;
+	private NodeList keywordNodes;
+	private Node lastResponse;
+	private LinkedList<Node> lastSimilarKeywords;
+	public static User user;
 
 	/*
 	 * Store keyword nodes for searching purposes. Node.getParent() should be
@@ -41,6 +43,7 @@ public class ResponseDatabase {
 		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 		doc = docBuilder.parse("responses.xml");
+		user = new User();
 
 		keywordNodes = doc.getElementsByTagName("Keyword");
 	}
@@ -50,7 +53,6 @@ public class ResponseDatabase {
 	 * response pick best response.
 	 */
 	public Response getResponse(LinkedList<String> keywords) {
-
 		// Get the similar keyword nodes
 		Logger.log("Keywords from message that are similar to the database: ");
 		LinkedList<Node> similarKeywords = new LinkedList<Node>();
@@ -60,6 +62,7 @@ public class ResponseDatabase {
 				similarKeywords.add(keywordNodes.item(i));
 			}
 		}
+				
 		Logger.log("\n");
 
 		if (similarKeywords.size() == 0 || invalidKeywords(foundWords)) {
@@ -84,7 +87,6 @@ public class ResponseDatabase {
 						bestResponse = similarKeywords.get(i - 1).getParentNode().getParentNode();
 						best = currentHealth;
 						Logger.log("Testing for another response.\n");
-						Logger.log("Current best response is: "+ bestResponse.getTextContent().trim()+"\n");
 					}
 					currentHealth = 0;
 				}
@@ -102,6 +104,7 @@ public class ResponseDatabase {
 		if (bestResponse != null) {
 			Logger.log("Best response found\n");
 			Node messagesNode = bestResponse.getChildNodes().item(3);
+			System.out.println(messagesNode.getTextContent());
 			int messagesNodeLength = messagesNode.getChildNodes().getLength();
 			LinkedList<String> messages = new LinkedList<String>();
 			for (int i = 0; i < messagesNodeLength; i++) {
@@ -111,7 +114,7 @@ public class ResponseDatabase {
 				}
 			}
 			Random random = new Random();
-			String message = messages.get(random.nextInt(messages.size())).replace("&", "Human").replace("*", "that");
+			String message = messages.get(random.nextInt(messages.size())).replace("&", user.getName()).replace("*", "that");
 
 			if (message.contains("[+]")) {
 				Logger.log("Positive reinforcement encountered.\n");
