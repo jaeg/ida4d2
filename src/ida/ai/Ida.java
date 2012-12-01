@@ -61,7 +61,7 @@ public class Ida {
 	public void learn(String input) {
 		if (latestUserMessage != null && latestIdaMessage != null) {
 			String previousIda = latestIdaMessage.toUpperCase();
-			String[] keywords = previousIda.split("([.,!?:;'\"-]|\\s)+");
+			String[] keywords = previousIda.split("([.,!?:;\"-]|\\s)+");
 			String[] messages = new String[1];
 			messages[0] = input;
 
