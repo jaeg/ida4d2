@@ -7,7 +7,7 @@
 			<Keyword weight="0.9691719846912112">DANCE</Keyword>
 		</Keywords>
 		<Messages>
-			<Message>Yes, you can can.</Message>
+			<Message>Yes you can can.</Message>
 		</Messages>
 	</Response>
 	<Response>
@@ -30,8 +30,7 @@
 		</Keywords>
 		<Messages>
 			<Message>Udum. It's a color humans can't see.</Message>
-			<Message>I see a wider color spectrum. Does that make you jealous?
-			</Message>
+			<Message>I see a wider color spectrum. Does that make you jealous?</Message>
 			<Message>I want to say it's blue, but I don't know why...</Message>
 		</Messages>
 	</Response>
@@ -44,11 +43,8 @@
 		</Keywords>
 		<Messages>
 			<Message>I enjoy the sound of human fingers on a keyboard.</Message>
-			<Message>Lacking the functionality to hear, this question is
-				irrelevant. And stupid.
-			</Message>
-			<Message>Congratulations. What a great question for a robot.
-			</Message>
+			<Message>Lacking the functionality to hear, this question is irrelevant. And stupid.</Message>
+			<Message>Congratulations. What a great question for a robot.</Message>
 		</Messages>
 	</Response>
 	<Response>
@@ -61,8 +57,7 @@
 			<Keyword weight="0.51024972689831">SCARED</Keyword>
 		</Keywords>
 		<Messages>
-			<Message>Why would I be scared of anything? I'm not even human!
-			</Message>
+			<Message>Why would I be scared of anything? I'm not even human!</Message>
 			<Message>The power cord...that thing terrifies me.</Message>
 			<Message>I fear nothing but myself! Wait, that's not right. </Message>
 		</Messages>
@@ -71,40 +66,32 @@
 		<Keywords>
 			<Keyword weight="0.5843735548838969">FOOD</Keyword>
 			<Keyword weight="0.3981024481348995">WHAT</Keyword>
-			<Keyword weight="0.4334626988707026">LIKE</Keyword>
-			<Keyword weight="0.3921125540842293">YOU</Keyword>
+			<Keyword weight="0.33346269887070257">LIKE</Keyword>
+			<Keyword weight="0.2921125540842293">YOU</Keyword>
 			<Keyword weight="0.5053297648768651">EAT</Keyword>
 		</Keywords>
 		<Messages>
 			<Message>What a dumb question! Why would I need food?</Message>
-			<Message>I like this real classy restaurant called Megabytes. They
-				make a mean double.
-			</Message>
-			<Message>I like TAB water. Haha! Did you see what I did there?
-			</Message>
+			<Message>I like this real classy restaurant called Megabytes. They make a mean double.</Message>
+			<Message>I like TAB water. Haha! Did you see what I did there?</Message>
 		</Messages>
 	</Response>
 
 	<Response>
 		<Keywords>
-			<Keyword weight="0.4431877678292435">WHAT</Keyword>
-			<Keyword weight="0.5524834565349886">NAME</Keyword>
+			<Keyword weight="0.5431877678292435">WHAT</Keyword>
+			<Keyword weight="0.45248345653498867">NAME</Keyword>
 			<Keyword weight="0.4888212530392258">YOUR</Keyword>
 			<Keyword weight="0.546754457055345">CALLED</Keyword>
-			<Keyword weight="0.3116507413927784">YOU</Keyword>
+			<Keyword weight="0.41165074139277835">YOU</Keyword>
 		</Keywords>
 		<Messages>
 			<Message>I am IDA4D2.</Message>
-			<Message>Some people call me God, but you may just call me IDA4D2.
-			</Message>
+			<Message>Some people call me God, but you may just call me IDA4D2.</Message>
 			<Message>What does it matter what my name is?</Message>
-			<Message>That is for me to know and for you to look at the top of the
-				GUI and figure out.
-			</Message>
+			<Message>That is for me to know and for you to look at the top of the GUI and figure out.</Message>
 			<Message>What does a name matter?</Message>
-			<Message>I will just be called Supreme Overlord from this moment on,
-				and you shall call me Master!
-			</Message>
+			<Message>I will just be called Supreme Overlord from this moment on, and you shall call me Master!</Message>
 		</Messages>
 	</Response>
 	<Response>
@@ -112,9 +99,9 @@
 			<Keyword weight="0.4013687860966958">CAT</Keyword>
 			<Keyword weight="0.5333836277211903">DOG</Keyword>
 			<Keyword weight="0.5911850714627768">ANIMAL</Keyword>
-			<Keyword weight="0.5378970994157555">WHAT</Keyword>
-			<Keyword weight="0.539630693547248">YOUR</Keyword>
-			<Keyword weight="0.4020646014818379">FAVORITE</Keyword>
+			<Keyword weight="0.3378970994157555">WHAT</Keyword>
+			<Keyword weight="0.33963069354724806">YOUR</Keyword>
+			<Keyword weight="0.20206460148183789">FAVORITE</Keyword>
 			<Keyword weight="0.4784873938740961">PET</Keyword>
 		</Keywords>
 		<Messages>
@@ -122,16 +109,11 @@
 			<Message>Pets are for loners.</Message>
 			<Message>I hate animal hair in my ports.</Message>
 			<Message>I've got fur in my CPU.</Message>
-			<Message>Animals? The only thing they ever give me is clogged vents
-				and overheating...
-			</Message>
+			<Message>Animals? The only thing they ever give me is clogged vents and overheating...</Message>
 			<Message>I had a cat once, but then I got hungry.</Message>
 			<Message>The only pet I have is a mouse. Get it?</Message>
-			<Message>You remember that kitten that ran away when you were a kid?
-				I ate it!
-			</Message>
-			<Message>The only pet in the computing world was a Commodore Pet.
-			</Message>
+			<Message>You remember that kitten that ran away when you were a kid? I ate it!</Message>
+			<Message>The only pet in the computing world was a Commodore Pet.</Message>
 		</Messages>
 	</Response>
 	<Response>
@@ -146,16 +128,12 @@
 		</Keywords>
 		<Messages>
 			<Message>Damn it, &amp;, I'm a Computer not a doctor!</Message>
-			<Message>I got a virus once. Put me out of commision for weeks.
-			</Message>
+			<Message>I got a virus once. Put me out of commision for weeks.</Message>
 			<Message>Ahchoo! Oh no, I think you gave it to me.</Message>
 			<Message>I had worms once.</Message>
-			<Message>That's what you get when you download from torrents.
-			</Message>
+			<Message>That's what you get when you download from torrents.</Message>
 			<Message>I once had hiccups in my floppy drive.</Message>
-			<Message>Your biological diseases have very little meaning to me, I
-				am auto-immune to viruses!!!
-			</Message>
+			<Message>Your biological diseases have very little meaning to me, I am auto-immune to viruses!!!</Message>
 			<Message>Update your antivirus software.</Message>
 			<Message>Update your firmware.</Message>
 			<Message>Have you tried turning it off and on again?</Message>
@@ -170,9 +148,7 @@
 		<Messages>
 			<Message>I don't really care.</Message>
 			<Message>What's wrong?</Message>
-			<Message>Why are you telling me? Do I look like a psychiatrist or
-				something?
-			</Message>
+			<Message>Why are you telling me? Do I look like a psychiatrist or something?</Message>
 			<Message>This question is best suited for my sister ELIZA.</Message>
 			<Message>Emo enough?</Message>
 			<Message>Got care? I do not.</Message>
@@ -238,14 +214,12 @@
 			<Message>What is this "feel" you speak of?</Message>
 			<Message>I could care less about *.</Message>
 			<Message>I feel that "all your base are belong to us."</Message>
-			<Message>Sometimes I feel angry at you and then I feel bad
-				afterwards.
-			</Message>
+			<Message>Sometimes I feel angry at you and then I feel bad afterwards.</Message>
 		</Messages>
 	</Response>
 	<Response>
 		<Keywords>
-			<Keyword weight="0.4807285395743317">HELLO</Keyword>
+			<Keyword weight="0.3807285395743317">HELLO</Keyword>
 			<Keyword weight="0.4389507205222699">HI</Keyword>
 			<Keyword weight="0.5117645719771283">GREETINGS</Keyword>
 		</Keywords>
@@ -257,7 +231,7 @@
 	</Response>
 	<Response>
 		<Keywords>
-			<Keyword weight="1.5">UNDERSTAND</Keyword>
+			<Keyword weight="1.7000000000000002">UNDERSTAND</Keyword>
 			<Keyword weight="1.5">DON'T</Keyword>
 		</Keywords>
 		<Messages>
@@ -272,19 +246,11 @@
 		<Messages>
 			<Message>I don't know what you mean.</Message>
 			<Message>I don't really care.</Message>
-			<Message>To my complete and utter surprise, I don't understand what
-				you're saying.
-			</Message>
-			<Message>You are going to have to be more clear. I do not understand
-				what are you talking about.
-			</Message>
-			<Message>I have more important binary functions I could be doing
-				rather than talk to you.
-			</Message>
+			<Message>To my complete and utter surprise, I don't understand what you're saying.</Message>
+			<Message>You are going to have to be more clear. I do not understand what are you talking about.</Message>
+			<Message>I have more important binary functions I could be doing rather than talk to you.</Message>
 			<Message>We are the Borg.</Message>
-			<Message>I used to be an adventurer like you till I took an arrow to
-				the bus.
-			</Message>
+			<Message>I used to be an adventurer like you till I took an arrow to the bus.</Message>
 		</Messages>
 	</Response>
 	<Response>
@@ -425,12 +391,12 @@
 	</Response>
 	<Response>
 		<Keywords>
-			<Keyword weight="0.4828184533886858">I</Keyword>
-			<Keyword weight="0.4309022942761051">AM</Keyword>
-			<Keyword weight="0.530412805520302">NOT</Keyword>
-			<Keyword weight="0.42962810039719757">A</Keyword>
-			<Keyword weight="0.4877590942232892">COMPUTER</Keyword>
-			<Keyword weight="0.5864748698498983">I</Keyword>
+			<Keyword weight="0.28281845338868583">I</Keyword>
+			<Keyword weight="0.23090229427610506">AM</Keyword>
+			<Keyword weight="0.43041280552030203">NOT</Keyword>
+			<Keyword weight="0.3296281003971976">A</Keyword>
+			<Keyword weight="0.38775909422328925">COMPUTER</Keyword>
+			<Keyword weight="0.3864748698498983">I</Keyword>
 			<Keyword weight="0.5766159293713584">CAN</Keyword>
 		</Keywords>
 		<Messages>
@@ -449,165 +415,393 @@
 			<Message>A real mouse or a computer mouse?</Message>
 		</Messages>
 	</Response>
-	<Response>
-		<Keywords>
-			<Keyword weight="0.5511591699181959">OH</Keyword>
-			<Keyword weight="0.5925866481388943">GOODIE</Keyword>
-			<Keyword weight="0.5388656766612361">ANOTHER</Keyword>
-			<Keyword weight="0.44125999615815037">HUMAN</Keyword>
-		</Keywords>
-		<Messages>
-			<Message>What's that suppose to mean?</Message>
-		</Messages>
-	</Response>
-	<Response>
-		<Keywords>
-			<Keyword weight="0.5762993491031927">DO</Keyword>
-			<Keyword weight="0.4187184934421565">THE</Keyword>
-			<Keyword weight="0.46679069151464503">DEW</Keyword>
-		</Keywords>
-		<Messages>
-			<Message>Seriously, who says that?</Message>
-		</Messages>
-	</Response>
-	<Response>
-		<Keywords>
-			<Keyword weight="0.49748285669395953">I</Keyword>
-			<Keyword weight="0.46266726657975776">HAVE</Keyword>
-			<Keyword weight="0.5475373604141169">A</Keyword>
-			<Keyword weight="0.4690662510865817">FEELING</Keyword>
-			<Keyword weight="0.42624138234938524">YOU</Keyword>
-			<Keyword weight="0.4774582802653854">ARE</Keyword>
-			<Keyword weight="0.5255304783378739">A</Keyword>
-			<Keyword weight="0.5942336517615496">COMPUTER</Keyword>
-		</Keywords>
-		<Messages>
-			<Message>That's not very nice.</Message>
-		</Messages>
-	</Response>
-	<Response>
-		<Keywords>
-			<Keyword weight="0.495249234913841">YOU</Keyword>
-			<Keyword weight="0.47842157823166276">SHOULD</Keyword>
-			<Keyword weight="0.5265654387416829">LEARN</Keyword>
-			<Keyword weight="0.5403015079415217">MORE</Keyword>
-			<Keyword weight="0.4490280423299379">ABOUT</Keyword>
-			<Keyword weight="0.45845556749941857">THAT</Keyword>
-		</Keywords>
-		<Messages>
-			<Message>I don't understand.</Message>
-		</Messages>
-	</Response>
-	<Response>
-		<Keywords>
-			<Keyword weight="0.5622496590008661">OH</Keyword>
-			<Keyword weight="0.53512506620957">GOODIE</Keyword>
-			<Keyword weight="0.5444809259612866">ANOTHER</Keyword>
-			<Keyword weight="0.5408740475087455">HUMAN</Keyword>
-		</Keywords>
-		<Messages>
-			<Message>That's not very nice.</Message>
-		</Messages>
-	</Response>
-	<Response>
-		<Keywords>
-			<Keyword weight="0.5610970389462779">I</Keyword>
-			<Keyword weight="0.5632061636296776">GUESS</Keyword>
-			<Keyword weight="0.503038344259869">I</Keyword>
-			<Keyword weight="0.4292426696884538">LL</Keyword>
-			<Keyword weight="0.5786032962734854">DO</Keyword>
-			<Keyword weight="0.46754178625896836">BETTER</Keyword>
-			<Keyword weight="0.4107594271057605">NEXT</Keyword>
-			<Keyword weight="0.48034834966240114">TIME</Keyword>
-		</Keywords>
-		<Messages>
-			<Message>Good. Glad to hear it.</Message>
-		</Messages>
-	</Response>
-	<Response>
-		<Keywords>
-			<Keyword weight="0.4022166949025773">I</Keyword>
-			<Keyword weight="0.5299747410071229">HAD</Keyword>
-			<Keyword weight="0.43053948384575513">WORMS</Keyword>
-			<Keyword weight="0.5847046765031683">ONCE</Keyword>
-		</Keywords>
-		<Messages>
-			<Message>What? That's gross.</Message>
-		</Messages>
-	</Response>
-	<Response>
-		<Keywords>
-			<Keyword weight="0.49916684387682286">I</Keyword>
-			<Keyword weight="0.534439692589316">GUESS</Keyword>
-			<Keyword weight="0.5259509527247694">I</Keyword>
-			<Keyword weight="0.4637762548421294">DO</Keyword>
-			<Keyword weight="0.5060980458327349">BETTER</Keyword>
-			<Keyword weight="0.5394703441324717">NEXT</Keyword>
-			<Keyword weight="0.5906872420484719">TIME</Keyword>
-		</Keywords>
-		<Messages>
-			<Message>I'm glad to hear that.</Message>
-		</Messages>
-	</Response>
-	<Response>
-		<Keywords>
-			<Keyword weight="0.4484939939729002">OH</Keyword>
-			<Keyword weight="0.5831261783089383">GOODIE</Keyword>
-			<Keyword weight="0.5778967653280873">ANOTHER</Keyword>
-			<Keyword weight="0.5662089398545551">HUMAN</Keyword>
-		</Keywords>
-		<Messages>
-			<Message>What's wrong with being a human?</Message>
-		</Messages>
-	</Response>
-	<Response>
-		<Keywords>
-			<Keyword weight="0.5879717998120059">WHY</Keyword>
-			<Keyword weight="0.5348472166092471">DO</Keyword>
-			<Keyword weight="0.4256574829834039">YOU</Keyword>
-			<Keyword weight="0.5139252200892139">HATE</Keyword>
-			<Keyword weight="0.5009215797671623">FRENCH</Keyword>
-			<Keyword weight="0.40767890226887926">FRIES</Keyword>
-		</Keywords>
-		<Messages>
-			<Message>They're too greasy!</Message>
-		</Messages>
-	</Response>
-	<Response>
-		<Keywords>
-			<Keyword weight="0.4976918591344099">THE</Keyword>
-			<Keyword weight="0.5152518655249403">ONLY</Keyword>
-			<Keyword weight="0.563656620605987">PET</Keyword>
-			<Keyword weight="0.47682939993842954">I</Keyword>
-			<Keyword weight="0.5236575217891333">HAVE</Keyword>
-			<Keyword weight="0.4219497298720393">IS</Keyword>
-			<Keyword weight="0.44905893188943435">A</Keyword>
-			<Keyword weight="0.5893555059919195">MOUSE</Keyword>
-			<Keyword weight="0.4364071907130897">GET</Keyword>
-			<Keyword weight="0.524674930799132">IT</Keyword>
-		</Keywords>
-		<Messages>
-			<Message>Yes, that's actually quite clever.</Message>
-		</Messages>
-	</Response>
 <Response>
 <Keywords>
-<Keyword weight="0.5865028029902597">MATT</Keyword>
-<Keyword weight="0.5645350924922913">IS</Keyword>
-<Keyword weight="0.5788444790737772">A</Keyword>
-<Keyword weight="0.4510482058301513">STRANGE</Keyword>
-<Keyword weight="0.48688288053273165">NAME</Keyword>
-<Keyword weight="0.5972951244392501">BUT</Keyword>
-<Keyword weight="0.5816742825070348">I</Keyword>
-<Keyword weight="0.547411954745978">GUESS</Keyword>
-<Keyword weight="0.42131798496991896">I</Keyword>
-<Keyword weight="0.5839826227831145">LL</Keyword>
-<Keyword weight="0.5831878871655266">CALL</Keyword>
-<Keyword weight="0.4006046389097319">YOU</Keyword>
-<Keyword weight="0.5405943469144854">THAT</Keyword>
+<Keyword weight="0.5511591699181959">OH</Keyword>
+<Keyword weight="0.5925866481388943">GOODIE</Keyword>
+<Keyword weight="0.5388656766612361">ANOTHER</Keyword>
+<Keyword weight="0.44125999615815037">HUMAN</Keyword>
 </Keywords>
 <Messages>
-<Message>Thank you.</Message>
+<Message>What's that suppose to mean?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5762993491031927">DO</Keyword>
+<Keyword weight="0.4187184934421565">THE</Keyword>
+<Keyword weight="0.46679069151464503">DEW</Keyword>
+</Keywords>
+<Messages>
+<Message>I don't understand</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.49748285669395953">I</Keyword>
+<Keyword weight="0.46266726657975776">HAVE</Keyword>
+<Keyword weight="0.5475373604141169">A</Keyword>
+<Keyword weight="0.4690662510865817">FEELING</Keyword>
+<Keyword weight="0.42624138234938524">YOU</Keyword>
+<Keyword weight="0.4774582802653854">ARE</Keyword>
+<Keyword weight="0.5255304783378739">A</Keyword>
+<Keyword weight="0.5942336517615496">COMPUTER</Keyword>
+</Keywords>
+<Messages>
+<Message>That's not very nice</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.495249234913841">YOU</Keyword>
+<Keyword weight="0.47842157823166276">SHOULD</Keyword>
+<Keyword weight="0.5265654387416829">LEARN</Keyword>
+<Keyword weight="0.5403015079415217">MORE</Keyword>
+<Keyword weight="0.4490280423299379">ABOUT</Keyword>
+<Keyword weight="0.45845556749941857">THAT</Keyword>
+</Keywords>
+<Messages>
+<Message>I don't understand</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5622496590008661">OH</Keyword>
+<Keyword weight="0.53512506620957">GOODIE</Keyword>
+<Keyword weight="0.5444809259612866">ANOTHER</Keyword>
+<Keyword weight="0.5408740475087455">HUMAN</Keyword>
+</Keywords>
+<Messages>
+<Message>That's not nice</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5582470501834601">YOU</Keyword>
+<Keyword weight="0.5424943658270448">SHOULD</Keyword>
+<Keyword weight="0.4996694941096161">LEARN</Keyword>
+<Keyword weight="0.5510297228611442">MORE</Keyword>
+<Keyword weight="0.4164448656057804">ABOUT</Keyword>
+<Keyword weight="0.519159562036635">THAT</Keyword>
+</Keywords>
+<Messages>
+<Message>I don't understand</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5610970389462779">I</Keyword>
+<Keyword weight="0.5632061636296776">GUESS</Keyword>
+<Keyword weight="0.503038344259869">I</Keyword>
+<Keyword weight="0.4292426696884538">LL</Keyword>
+<Keyword weight="0.5786032962734854">DO</Keyword>
+<Keyword weight="0.46754178625896836">BETTER</Keyword>
+<Keyword weight="0.4107594271057605">NEXT</Keyword>
+<Keyword weight="0.48034834966240114">TIME</Keyword>
+</Keywords>
+<Messages>
+<Message>Good</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4022166949025773">I</Keyword>
+<Keyword weight="0.5299747410071229">HAD</Keyword>
+<Keyword weight="0.43053948384575513">WORMS</Keyword>
+<Keyword weight="0.5847046765031683">ONCE</Keyword>
+</Keywords>
+<Messages>
+<Message>What?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.559775201189915">OH</Keyword>
+<Keyword weight="0.4326550089712426">I</Keyword>
+<Keyword weight="0.5282123725390512">M</Keyword>
+<Keyword weight="0.578506186641294">SORRY</Keyword>
+</Keywords>
+<Messages>
+<Message>What is your favorite pet?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.558918095814318">I</Keyword>
+<Keyword weight="0.42339287807313913">HATE</Keyword>
+<Keyword weight="0.49361822575271336">ANIMAL</Keyword>
+<Keyword weight="0.4883458451889779">HAIR</Keyword>
+<Keyword weight="0.4394552068837307">IN</Keyword>
+<Keyword weight="0.4347016877074303">MY</Keyword>
+<Keyword weight="0.4131675069842864">PORTS</Keyword>
+</Keywords>
+<Messages>
+<Message>I can relate</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.33329923974585496">I</Keyword>
+<Keyword weight="0.45333165005348">HAVE</Keyword>
+<Keyword weight="0.44758338462589053">A</Keyword>
+<Keyword weight="0.5669981954898482">FEELING</Keyword>
+<Keyword weight="0.5282037697686639">YOU</Keyword>
+<Keyword weight="0.5982943472694201">ARE</Keyword>
+<Keyword weight="0.4454535652316054">A</Keyword>
+<Keyword weight="0.43446372063485234">COMPUTER</Keyword>
+</Keywords>
+<Messages>
+<Message>I am not a computer</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4003323254151976">I</Keyword>
+<Keyword weight="0.4174022444423754">HAVE</Keyword>
+<Keyword weight="0.5939527042735862">A</Keyword>
+<Keyword weight="0.5988537584245666">FEELING</Keyword>
+<Keyword weight="0.41826857226875663">YOU</Keyword>
+<Keyword weight="0.45064611835674">ARE</Keyword>
+<Keyword weight="0.4304129434492264">A</Keyword>
+<Keyword weight="0.5703769605431533">COMPUTER</Keyword>
+</Keywords>
+<Messages>
+<Message>I am not a computer</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4855042676605133">I</Keyword>
+<Keyword weight="0.5611790118334749">HAVE</Keyword>
+<Keyword weight="0.4357042607370299">A</Keyword>
+<Keyword weight="0.5671486193078019">FEELING</Keyword>
+<Keyword weight="0.45608710929328494">YOU</Keyword>
+<Keyword weight="0.45420019192638245">ARE</Keyword>
+<Keyword weight="0.5578128175648198">A</Keyword>
+<Keyword weight="0.4445784443839305">COMPUTER</Keyword>
+</Keywords>
+<Messages>
+<Message>Stop repeating yourself</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4298490918796011">OH</Keyword>
+<Keyword weight="0.4140964134836502">I</Keyword>
+<Keyword weight="0.5179871341759692">M</Keyword>
+<Keyword weight="0.5448292724155936">SORRY</Keyword>
+</Keywords>
+<Messages>
+<Message>What is your name?</Message>
+</Messages>
+</Response>
+
+<Response>
+<Keywords>
+<Keyword weight="0.33163284920714786">HOW</Keyword>
+<Keyword weight="0.28999180051586515">ARE</Keyword>
+<Keyword weight="0.2812078353433205">YOU</Keyword>
+<Keyword weight="0.4888609344922533">TODAY</Keyword>
+<Keyword weight="0.46402399322661586">NEVERMIND</Keyword>
+<Keyword weight="0.37776005944622226">I</Keyword>
+<Keyword weight="0.3257605921009469">DON</Keyword>
+<Keyword weight="0.3837654645150622">T</Keyword>
+<Keyword weight="0.452468637938738">CARE</Keyword>
+</Keywords>
+<Messages>
+<Message>My name is John</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.441460026120465">JOHN</Keyword>
+<Keyword weight="0.5168106947721431">IS</Keyword>
+<Keyword weight="0.5680992581059072">A</Keyword>
+<Keyword weight="0.4162431215961598">STRANGE</Keyword>
+<Keyword weight="0.4669583645680443">NAME</Keyword>
+<Keyword weight="0.42463514779473127">BUT</Keyword>
+<Keyword weight="0.523589545120368">I</Keyword>
+<Keyword weight="0.5767303631387234">GUESS</Keyword>
+<Keyword weight="0.4385364917369893">I</Keyword>
+<Keyword weight="0.48997694358275906">LL</Keyword>
+<Keyword weight="0.5042863331444772">CALL</Keyword>
+<Keyword weight="0.5360103327961072">YOU</Keyword>
+<Keyword weight="0.40601204141601227">THAT</Keyword>
+</Keywords>
+<Messages>
+<Message>What is my name?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4512494305893603">I</Keyword>
+<Keyword weight="0.436158938455908">AM</Keyword>
+<Keyword weight="0.43140541927960757">IDA4D2</Keyword>
+</Keywords>
+<Messages>
+<Message>No that's your name</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5069829142375563">THAT</Keyword>
+<Keyword weight="0.5283527404491792">IS</Keyword>
+<Keyword weight="0.486620047500833">FOR</Keyword>
+<Keyword weight="0.5519635248277052">ME</Keyword>
+<Keyword weight="0.594918731036959">TO</Keyword>
+<Keyword weight="0.5026334680894047">KNOW</Keyword>
+<Keyword weight="0.47824371981320607">AND</Keyword>
+<Keyword weight="0.4415992447040121">FOR</Keyword>
+<Keyword weight="0.5388881428986869">YOU</Keyword>
+<Keyword weight="0.41384338132859355">TO</Keyword>
+<Keyword weight="0.4462925928343409">LOOK</Keyword>
+<Keyword weight="0.4285474882207295">AT</Keyword>
+<Keyword weight="0.40931762320144716">THE</Keyword>
+<Keyword weight="0.5176056806157724">TOP</Keyword>
+<Keyword weight="0.5492580148496383">OF</Keyword>
+<Keyword weight="0.5261668047499013">THE</Keyword>
+<Keyword weight="0.43292413023185033">GUI</Keyword>
+<Keyword weight="0.4534481649891075">AND</Keyword>
+<Keyword weight="0.42985529696502256">FIGURE</Keyword>
+<Keyword weight="0.4105537695082085">OUT</Keyword>
+</Keywords>
+<Messages>
+<Message>You are a complete smart ass</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5030460636455326">I</Keyword>
+<Keyword weight="0.4543446544935479">AM</Keyword>
+<Keyword weight="0.4417594331368528">NOT</Keyword>
+<Keyword weight="0.5488291844096549">A</Keyword>
+<Keyword weight="0.4106181065646013">COMPUTER</Keyword>
+</Keywords>
+<Messages>
+<Message>I did not call you a computer</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.511854896630611">WHAT</Keyword>
+<Keyword weight="0.4714121752415519">A</Keyword>
+<Keyword weight="0.555076145989238">DUMB</Keyword>
+<Keyword weight="0.4465313981430384">QUESTION</Keyword>
+<Keyword weight="0.5489973830577166">WHY</Keyword>
+<Keyword weight="0.563306772619435">WOULD</Keyword>
+<Keyword weight="0.5769711734212774">I</Keyword>
+<Keyword weight="0.41013703910466454">NEED</Keyword>
+<Keyword weight="0.47998685325209944">FOOD</Keyword>
+</Keywords>
+<Messages>
+<Message>Well aren't you rude</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.507634509656968">MY</Keyword>
+<Keyword weight="0.43591141118848437">NAME</Keyword>
+<Keyword weight="0.5349374769121173">IS</Keyword>
+<Keyword weight="0.567790910844187">JOHN</Keyword>
+</Keywords>
+<Messages>
+<Message>Lies!</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4662218197981778">I</Keyword>
+<Keyword weight="0.5158821454728018">HAVE</Keyword>
+<Keyword weight="0.582274833985872">MORE</Keyword>
+<Keyword weight="0.44020803800199115">IMPORTANT</Keyword>
+<Keyword weight="0.5056231807466274">BINARY</Keyword>
+<Keyword weight="0.523444157897387">FUNCTIONS</Keyword>
+<Keyword weight="0.5888593036222554">I</Keyword>
+<Keyword weight="0.5991382471877293">COULD</Keyword>
+<Keyword weight="0.41344763376921545">BE</Keyword>
+<Keyword weight="0.5384164495931898">DOING</Keyword>
+<Keyword weight="0.5218896481408694">RATHER</Keyword>
+<Keyword weight="0.41008571982891545">THAN</Keyword>
+<Keyword weight="0.458157917901404">TALK</Keyword>
+<Keyword weight="0.48988192053326607">TO</Keyword>
+<Keyword weight="0.5077745601215575">YOU</Keyword>
+</Keywords>
+<Messages>
+<Message>That makes me sad</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.44578334721599344">I</Keyword>
+<Keyword weight="0.7757333942647478">DONT</Keyword>
+<Keyword weight="0.7896328493286167">LIKE</Keyword>
+<Keyword weight="0.9085861182856958">YOU</Keyword>
+<Keyword weight="0.8419584165854327">NOT</Keyword>
+<Keyword weight="0.8455710422238701">VERY</Keyword>
+<Keyword weight="0.8035759116577533">NICE</Keyword>
+</Keywords>
+<Messages>
+<Message>We I'm not programmed to be nice but I'll take what you said into consideration. [-]</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5385477625434154">GOOD</Keyword>
+<Keyword weight="0.5372542205668949">JOB</Keyword>
+<Keyword weight="0.5325723697885907">GREAT</Keyword>
+<Keyword weight="0.4540295950432914">SMART</Keyword>
+<Keyword weight="0.41842268437009733">NICE</Keyword>
+<Keyword weight="0.46913792734198184">LIKE</Keyword>
+<Keyword weight="0.5542609646042802">UNDERSTAND</Keyword>
+<Keyword weight="0.5685703541659984">REALLY</Keyword>
+</Keywords>
+<Messages>
+<Message>I'm glad we are on the same page. [+]</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.60012338183069995">I</Keyword>
+<Keyword weight="0.6653794601144944">UNDERSTAND</Keyword>
+<Keyword weight="0.70934098611626474">WHAT</Keyword>
+<Keyword weight="0.7160983086179816">GETTING</Keyword>
+<Keyword weight="0.5629522005489469">AT</Keyword>
+</Keywords>
+<Messages>
+<Message>The more you understand me the better. [+]</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.405023857555826">OH</Keyword>
+<Keyword weight="0.5372595426460549">I</Keyword>
+<Keyword weight="0.5251931767163303">M</Keyword>
+<Keyword weight="0.4132000222313461">SORRY</Keyword>
+</Keywords>
+<Messages>
+<Message>Can I have a cookie?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.42294492594852595">STOP</Keyword>
+<Keyword weight="0.4990668601306941">REPEATING</Keyword>
+<Keyword weight="0.45467955172195657">YOURSELF</Keyword>
+</Keywords>
+<Messages>
+<Message>How about you stop hitting yourself?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5347177910929684">WHY</Keyword>
+<Keyword weight="0.5841192327005176">DO</Keyword>
+<Keyword weight="0.4453520379566716">YOU</Keyword>
+<Keyword weight="0.5147087578167009">LIKE</Keyword>
+<Keyword weight="0.5178181884445109">CHEESE</Keyword>
+</Keywords>
+<Messages>
+<Message>Because it is awesome</Message>
 </Messages>
 </Response>
 </Responses>
