@@ -5,6 +5,7 @@ import ida.Utilities.LanguageUtility;
 import ida.Utilities.XMLWriter;
 import ida.XML.ResponseDatabase;
 import ida.gui.Gui;
+import ida.gui.Voice;
 import ida.responses.Response;
 import ida.user.UserMessage;
 
@@ -55,7 +56,7 @@ public class Ida {
 		latestUserMessage = userMessage.toString();
 		latestIdaMessage = response.toString();
 
-		// Voice.sayIt(response);
+		Voice.sayIt(response);
 	}
 
 	public void learn(String input) {
@@ -67,6 +68,7 @@ public class Ida {
 
 			try {
 				XMLWriter.writeResponseToFile("responses.xml", keywords, messages);
+				Logger.log("Saved XML\n");
 			} catch (Exception e) {
 				Logger.log("Could not find the XML file to write to!");
 				e.printStackTrace();

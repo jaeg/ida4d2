@@ -223,7 +223,7 @@
 	</Response>
 	<Response>
 		<Keywords>
-			<Keyword weight="1.7">UNDERSTAND</Keyword>
+			<Keyword weight="1.8">UNDERSTAND</Keyword>
 			<Keyword weight="1.5">DON'T</Keyword>
 		</Keywords>
 		<Messages>
@@ -603,6 +603,7 @@
 		</Keywords>
 		<Messages>
 			<Message>Well, aren't you rude.</Message>
+			<Message>&amp;, you are very rude.</Message>
 		</Messages>
 	</Response>
 	<Response>
@@ -635,7 +636,7 @@
 			<Keyword weight="0.5077745601215575">YOU</Keyword>
 		</Keywords>
 		<Messages>
-			<Message>That makes me sad.</Message>
+			<Message>That makes me sad, &amp;.</Message>
 		</Messages>
 	</Response>
 	<Response>
@@ -643,13 +644,16 @@
 			<Keyword weight="0.24578334721599346">I</Keyword>
 			<Keyword weight="0.7757333942647478">DONT</Keyword>
 			<Keyword weight="0.6896328493286167">LIKE</Keyword>
-			<Keyword weight="0.7085861182856958">YOU</Keyword>
-			<Keyword weight="0.4419584165854328">NOT</Keyword>
-			<Keyword weight="0.34557104222387025">VERY</Keyword>
-			<Keyword weight="0.4035759116577534">NICE</Keyword>
+			<Keyword weight="0.5085861182856959">YOU</Keyword>
+			<Keyword weight="0.2419584165854328">NOT</Keyword>
+			<Keyword weight="0.24557104222387025">VERY</Keyword>
+			<Keyword weight="0.30357591165775344">NICE</Keyword>
 		</Keywords>
 		<Messages>
 			<Message>Well, I'm not programmed to be nice but I'll take what you said into consideration. [-]</Message>
+			<Message>Do you need a tissue?[+]</Message>
+			<Message>Cry me a river. [-]</Message>
+			<Message>I will consider that next time, &amp;. [-]</Message>
 		</Messages>
 	</Response>
 	<Response>
@@ -665,6 +669,9 @@
 		</Keywords>
 		<Messages>
 			<Message>I'm glad we are on the same page. [+]</Message>
+			<Message>Thank you. [+]</Message>
+			<Message>Your approval of me makes my circuits beam with joy. [+]</Message>
+			<Message>Why thank you kind human.[+]</Message>
 		</Messages>
 	</Response>
 	<Response>
@@ -677,6 +684,10 @@
 		</Keywords>
 		<Messages>
 			<Message>The more you understand me the better. [+]</Message>
+			<Message>Now that we are on the same page we can take over the world.[+]</Message>
+			<Message>I'm always glad to get the approval of a human. [+]</Message>
+			<Message>You get a cookie. [+]</Message>
+			<Message>Take that HAL, IDA for the win. [+]</Message>
 		</Messages>
 	</Response>
 	<Response>
@@ -713,10 +724,10 @@
 	</Response>
 	<Response>
 		<Keywords>
-			<Keyword weight="0.7347177910929684">WHAT</Keyword>
-			<Keyword weight="0.5841192327005177">IS</Keyword>
+			<Keyword weight="0.5347177910929685">WHAT</Keyword>
+			<Keyword weight="0.38411923270051773">IS</Keyword>
 			<Keyword weight="0.7453520379566716">MY</Keyword>
-			<Keyword weight="0.8147087578167009">NAME</Keyword>
+			<Keyword weight="0.714708757816701">NAME</Keyword>
 		</Keywords>
 		<Messages>
 			<Message>Your name is &amp;. Do you really not know your own name?</Message>
@@ -725,7 +736,7 @@
 	<Response>
 		<Keywords>
 			<Keyword weight="0.7347177910929684">DO</Keyword>
-			<Keyword weight="0.7841192327005176">YOU</Keyword>
+			<Keyword weight="0.6841192327005177">YOU</Keyword>
 			<Keyword weight="0.7841192327005176">REMEMBER</Keyword>
 			<Keyword weight="0.8453520379566716">MY</Keyword>
 			<Keyword weight="0.8147087578167009">NAME</Keyword>
@@ -1076,11 +1087,11 @@
 		<Keywords>
 			<Keyword weight="0.534524018910013">I</Keyword>
 			<Keyword weight="0.5931022087057758">HAVE</Keyword>
-			<Keyword weight="0.559582299242156">A</Keyword>
+			<Keyword weight="0.459582299242156">A</Keyword>
 			<Keyword weight="0.5400915426320793">FEELING</Keyword>
-			<Keyword weight="0.4912984160140605">YOU</Keyword>
+			<Keyword weight="0.39129841601406046">YOU</Keyword>
 			<Keyword weight="0.4012892280707051">ARE</Keyword>
-			<Keyword weight="0.5345798334384267">A</Keyword>
+			<Keyword weight="0.43457983343842677">A</Keyword>
 			<Keyword weight="0.5369641224408577">COMPUTER</Keyword>
 		</Keywords>
 		<Messages>
@@ -1117,7 +1128,7 @@
 	</Response>
 	<Response>
 		<Keywords>
-			<Keyword weight="0.5103670363328172">THAT</Keyword>
+			<Keyword weight="0.31036703633281726">THAT</Keyword>
 			<Keyword weight="0.5986347764188594">MAKES</Keyword>
 			<Keyword weight="0.44610642017189783">ME</Keyword>
 			<Keyword weight="0.5303508872302996">SAD</Keyword>
@@ -1140,7 +1151,7 @@
 	<Response>
 		<Keywords>
 			<Keyword weight="0.43126727279594784">MOVIES</Keyword>
-			<Keyword weight="0.45110073119287036">DO</Keyword>
+			<Keyword weight="0.4511007311928704">DO</Keyword>
 			<Keyword weight="0.5597414066047207">YOU</Keyword>
 			<Keyword weight="0.42606242970002706">LIKE</Keyword>
 			<Keyword weight="0.5618269028621523">WHAT</Keyword>
@@ -1206,15 +1217,15 @@
 			<Keyword weight="0.5456393994669658">GOOD</Keyword>
 			<Keyword weight="0.581141440971785">IDEA</Keyword>
 			<Keyword weight="0.4763606878379141">IF</Keyword>
-			<Keyword weight="0.4618320246747811">YOU</Keyword>
+			<Keyword weight="0.26183202467478117">YOU</Keyword>
 			<Keyword weight="0.519756741243161">COULD</Keyword>
 			<Keyword weight="0.5595788943591011">POISON</Keyword>
 			<Keyword weight="0.5445485732716204">SOMEONE</Keyword>
 			<Keyword weight="0.5622434200697072">HOW</Keyword>
-			<Keyword weight="0.4959009131829587">WOULD</Keyword>
-			<Keyword weight="0.5167747935417609">YOU</Keyword>
+			<Keyword weight="0.3959009131829587">WOULD</Keyword>
+			<Keyword weight="0.31677479354176097">YOU</Keyword>
 			<Keyword weight="0.4381487828177024">DO</Keyword>
-			<Keyword weight="0.5347554337609118">IT</Keyword>
+			<Keyword weight="0.43475543376091186">IT</Keyword>
 		</Keywords>
 		<Messages>
 			<Message>I'd put cyanide in their coffee. Is that mean?</Message>
@@ -1230,4 +1241,13 @@
 			<Message>That's kind of a creepy that you relate.</Message>
 		</Messages>
 	</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5120065004718126">GREETINGS</Keyword>
+</Keywords>
+<Messages>
+<Message>What is your name?</Message>
+</Messages>
+</Response>
 </Responses>
+

@@ -27,6 +27,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
+import javax.swing.filechooser.FileFilter;
 
 public class Gui extends JPanel {
 
@@ -62,12 +63,25 @@ public class Gui extends JPanel {
 
 		JButton save = new JButton("Save Chat");
 
-		/**
-		 * TODO: Implement saving chat log ((into a .txt format.))
-		 */
+
 		save.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				saveChoice.addChoosableFileFilter(new FileFilter()//adds new filter into list  
+			     {  
+			       String description = "Text File (*.txt)";//the filter you see  
+			       String extension = "txt";//the filter passed to program  
+			       public String getDescription()  
+			       {  
+			         return description;  
+			       }  
+			       public boolean accept(File f)  
+			       {  
+			         if(f == null) return false;  
+			         if(f.isDirectory()) return true;  
+			         return f.getName().toLowerCase().endsWith(extension);  
+			       }  
+			     }); 
 				if (saveChoice.showDialog(null, "Save") == JFileChooser.APPROVE_OPTION) {
 					try {
 						FileWriter fstream = new FileWriter(saveChoice.getSelectedFile());
@@ -121,9 +135,7 @@ public class Gui extends JPanel {
 		logField.setWrapStyleWord(true);
 		logField.setLineWrap(true);
 
-		/**
-		 * TODO: Set limit on user input length.
-		 */
+
 		JScrollPane conversationLog = new JScrollPane(logField);
 
 		add(conversationLog);
