@@ -134,7 +134,7 @@ public class Gui extends JPanel {
 		logField = new JTextArea();
 		logField.setWrapStyleWord(true);
 		logField.setLineWrap(true);
-
+		logField.setEditable(false);
 
 		JScrollPane conversationLog = new JScrollPane(logField);
 
@@ -199,6 +199,18 @@ public class Gui extends JPanel {
 
 		this.setBackground(new Color(69, 69, 69));
 	}
+	
+	public class myTextArea extends JTextArea {
+		
+		private static final long serialVersionUID = 1L;
+		public myTextArea(int rows, int cols) {
+		super(rows,cols);
+		}
+		public void append(String text) {
+		super.append(text);
+		this.setCaretPosition(this.getCaretPosition()+text.length());
+		}
+		}
 
 	private void submitAction() {
 		Logger.log("\n");
