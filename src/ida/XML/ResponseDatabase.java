@@ -171,7 +171,6 @@ public class ResponseDatabase
 
 		Logger.log("Best response found\n");
 		Node messagesNode = response.getChildNodes().item(3);
-		System.out.println(messagesNode.getTextContent());
 		int messagesNodeLength = messagesNode.getChildNodes().getLength();
 		LinkedList<String> messages = new LinkedList<String>();
 		for (int i = 0; i < messagesNodeLength; i++)

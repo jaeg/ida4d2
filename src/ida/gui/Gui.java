@@ -38,12 +38,12 @@ public class Gui extends JPanel {
 	private static final int TA_ROWS = 20;
 	private static final int TA_COLS = 35;
 	public static JTextArea logField = new JTextArea(TA_ROWS, TA_COLS);
+
 	public Gui() {
 		new Logger();
-		
+
 		try {
-			UIManager
-					.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 		} catch (Exception e) {
 		}
 
@@ -56,13 +56,12 @@ public class Gui extends JPanel {
 
 		this.setBorder(new EmptyBorder(10, 50, 10, 50));
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		conversationPanel.setLayout(new BoxLayout(conversationPanel,
-				BoxLayout.X_AXIS));
+		conversationPanel.setLayout(new BoxLayout(conversationPanel, BoxLayout.X_AXIS));
 		entryPanel.setLayout(new BoxLayout(entryPanel, BoxLayout.X_AXIS));
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
 		JButton save = new JButton("Save Chat");
-	
+
 		/**
 		 * TODO: Implement saving chat log ((into a .txt format.))
 		 */
@@ -71,19 +70,15 @@ public class Gui extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (saveChoice.showDialog(null, "Save") == JFileChooser.APPROVE_OPTION) {
 					try {
-						FileWriter fstream = new FileWriter(saveChoice
-								.getSelectedFile());
+						FileWriter fstream = new FileWriter(saveChoice.getSelectedFile());
 						BufferedWriter out = new BufferedWriter(fstream);
 						out.write(logField.getText());
 						out.close();
-						JOptionPane.showMessageDialog(null,
-								"Your chat log has been saved.");
+						JOptionPane.showMessageDialog(null, "Your chat log has been saved.");
 					} catch (Exception ex) {
-						JOptionPane.showMessageDialog(null,
-								"Error saving file!");
+						JOptionPane.showMessageDialog(null, "Error saving file!");
 					}
-					
-										
+
 				}
 			}
 		});
@@ -97,8 +92,6 @@ public class Gui extends JPanel {
 				logField.setText("");
 			}
 		});
-
-		
 
 		menuPanel.add(save);
 		menuPanel.add(clear);
@@ -172,13 +165,13 @@ public class Gui extends JPanel {
 		JButton idaLog = new JButton("IDA's Thoughts");
 
 		idaLog.addActionListener(new ActionListener() {
-		
-		 @Override
-		 public void actionPerformed(ActionEvent e) {
-			 Logger.toggleLog();
-		 }
-		 });
-		
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Logger.toggleLog();
+			}
+		});
+
 		buttonPanel.add(idaLog);
 		buttonPanel.add(quit);
 		add(buttonPanel);
@@ -197,9 +190,12 @@ public class Gui extends JPanel {
 
 	private void submitAction() {
 		Logger.log("\n");
-		Logger.log("User sent: " + submissionField.getText() + "\n");
-		ida.learn(submissionField.getText());
-		ida.respondTo(submissionField.getText());
+		String userText = submissionField.getText();
+		Logger.log("User sent: " + userText + "\n");
+		if (!userText.contains("My name is")) {
+			ida.learn(userText);
+		}
+		ida.respondTo(userText);
 		submissionField.setText("");
 	}
 

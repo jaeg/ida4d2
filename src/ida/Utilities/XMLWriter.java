@@ -68,7 +68,6 @@ public class XMLWriter
 		PrintWriter out = new PrintWriter(file);
 		out.println(xmlString);
 		out.close();
-		System.out.println(xmlString);
 	}
 	
 	public static void saveXML(Document doc) throws Exception
@@ -88,7 +87,6 @@ public class XMLWriter
 		PrintWriter out = new PrintWriter(file);
 		out.println(xmlString);
 		out.close();
-		System.out.println(xmlString);
 		
 	}
 
