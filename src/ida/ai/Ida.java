@@ -56,7 +56,7 @@ public class Ida {
 		latestUserMessage = userMessage.toString();
 		latestIdaMessage = response.toString();
 
-		Voice.sayIt(response);
+		//Voice.sayIt(response);
 	}
 
 	public void learn(String input) {

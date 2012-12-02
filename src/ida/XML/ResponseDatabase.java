@@ -247,10 +247,10 @@ public class ResponseDatabase
 	{
 		for (String keyword : list)
 		{
-			if (keyword != "WHAT" || keyword != "HOW" || keyword != "ARE"
-					|| keyword != "WHY" || keyword != "YOU" || keyword != "WHO")
+			if (keyword != "WHAT" && keyword != "HOW" && keyword != "ARE"
+					&& keyword != "WHY" && keyword != "YOU" && keyword != "WHO")
 			{
-				return false;
+				return true;
 			}
 		}
 		return false;
