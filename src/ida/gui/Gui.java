@@ -63,25 +63,32 @@ public class Gui extends JPanel {
 
 		JButton save = new JButton("Save Chat");
 
-
 		save.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				saveChoice.addChoosableFileFilter(new FileFilter()//adds new filter into list  
-			     {  
-			       String description = "Text File (*.txt)";//the filter you see  
-			       String extension = "txt";//the filter passed to program  
-			       public String getDescription()  
-			       {  
-			         return description;  
-			       }  
-			       public boolean accept(File f)  
-			       {  
-			         if(f == null) return false;  
-			         if(f.isDirectory()) return true;  
-			         return f.getName().toLowerCase().endsWith(extension);  
-			       }  
-			     }); 
+				saveChoice.addChoosableFileFilter(new FileFilter()// adds new
+																	// filter
+																	// into list
+						{
+							String description = "Text File (*.txt)";// the
+																		// filter
+																		// you
+																		// see
+							String extension = "txt";// the filter passed to
+														// program
+
+							public String getDescription() {
+								return description;
+							}
+
+							public boolean accept(File f) {
+								if (f == null)
+									return false;
+								if (f.isDirectory())
+									return true;
+								return f.getName().toLowerCase().endsWith(extension);
+							}
+						});
 				if (saveChoice.showDialog(null, "Save") == JFileChooser.APPROVE_OPTION) {
 					try {
 						FileWriter fstream = new FileWriter(saveChoice.getSelectedFile());
@@ -199,18 +206,20 @@ public class Gui extends JPanel {
 
 		this.setBackground(new Color(69, 69, 69));
 	}
-	
+
 	public class myTextArea extends JTextArea {
-		
+
 		private static final long serialVersionUID = 1L;
+
 		public myTextArea(int rows, int cols) {
-		super(rows,cols);
+			super(rows, cols);
 		}
+
 		public void append(String text) {
-		super.append(text);
-		this.setCaretPosition(this.getCaretPosition()+text.length());
+			super.append(text);
+			this.setCaretPosition(this.getCaretPosition() + text.length());
 		}
-		}
+	}
 
 	private void submitAction() {
 		Logger.log("\n");
