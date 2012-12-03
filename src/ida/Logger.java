@@ -1,6 +1,8 @@
 package ida;
 
 import java.awt.Dimension;
+import java.awt.event.AdjustmentEvent;
+import java.awt.event.AdjustmentListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
@@ -19,13 +21,17 @@ public class Logger extends JPanel
 	{
 		logFrame = new JFrame("Log window");
 		logFrame.getContentPane().add(this);
-
+		
+		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		//this.setPreferredSize(new Dimension(300,200));
 		JScrollPane logPane = new JScrollPane(log);
 		logPane.setPreferredSize(new Dimension(370,500));
 		
-		//logPane.add(log);
+		logPane.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener(){
+			public void adjustmentValueChanged(AdjustmentEvent e){
+			log.select(log.getHeight()+1000,0);
+			}});
+		
 		add(logPane);
 		
 		logFrame.pack();
@@ -46,4 +52,7 @@ public class Logger extends JPanel
 		currentState = !currentState;
 	}
 
+	
+	
 }
+
