@@ -1279,4 +1279,32 @@
 			<Message>Eleven.</Message>
 		</Messages>
 	</Response>
+	<Response>
+		<Keywords>
+			<Keyword weight="0.5554003131787093">GREETINGS</Keyword>
+		</Keywords>
+		<Messages>
+			<Message>Which bear is best?</Message>
+		</Messages>
+	</Response>
+	<Response>
+		<Keywords>
+			<Keyword weight="0.5188627814462452">WHICH</Keyword>
+			<Keyword weight="0.42841489094142254">BEAR</Keyword>
+			<Keyword weight="0.4612683308339566">BEST</Keyword>
+		</Keywords>
+		<Messages>
+			<Message>Black bear. Of course.</Message>
+		</Messages>
+	</Response>
+	<Response>
+		<Keywords>
+			<Keyword weight="0.4006204093255848">MANY</Keyword>
+			<Keyword weight="0.5020342523192148">FINGERS</Keyword>
+			<Keyword weight="0.4077423666149659">HAVE</Keyword>
+		</Keywords>
+		<Messages>
+			<Message>Ten fingers!</Message>
+		</Messages>
+	</Response>
 </Responses>

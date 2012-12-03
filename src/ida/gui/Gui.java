@@ -225,7 +225,7 @@ public class Gui extends JPanel {
 		Logger.log("\n");
 		String userText = submissionField.getText();
 		Logger.log("User sent: " + userText + "\n");
-		if (!userText.contains("My name is") || !ida.getQuestionAsked()) {
+		if (!userText.contains("My name is") && !ida.getQuestionAsked()) {
 			ida.learn(userText);
 		}
 		ida.respondTo(userText);
