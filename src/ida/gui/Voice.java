@@ -6,6 +6,7 @@ import com.gtranslate.Audio;
 import com.gtranslate.Language;
 
 public class Voice {
+	
 	public static void sayIt(Response message) {
 		Audio audio = Audio.getInstance();
 
