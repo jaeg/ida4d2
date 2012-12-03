@@ -22,11 +22,10 @@ public class Logger extends JPanel
 		logFrame = new JFrame("Log window");
 		logFrame.getContentPane().add(this);
 		
-		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		JScrollPane logPane = new JScrollPane(log);
 		logPane.setPreferredSize(new Dimension(370,500));
-		
+
 		logPane.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener(){
 			public void adjustmentValueChanged(AdjustmentEvent e){
 			log.select(log.getHeight()+1000,0);
