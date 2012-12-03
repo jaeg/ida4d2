@@ -1,18 +1,18 @@
 package ida.user;
 
 public class User {
-	
+
 	private String userName;
-	
-	public User(){
+
+	public User() {
 		userName = "Human";
 	}
-	
-	public void setName(String name){
+
+	public void setName(String name) {
 		this.userName = name;
 	}
-	
-	public String getName(){
+
+	public String getName() {
 		return userName;
 	}
 
