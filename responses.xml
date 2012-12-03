@@ -382,7 +382,7 @@
 			<Keyword weight="0.562802105499674">FIRMWARE</Keyword>
 		</Keywords>
 		<Messages>
-			<Message>I am not a computer. I can't.</Message>
+			<Message>I am not a computer, &amp;. I can't.</Message>
 		</Messages>
 	</Response>
 	<Response>
