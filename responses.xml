@@ -1307,4 +1307,321 @@
 			<Message>Ten fingers!</Message>
 		</Messages>
 	</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4222720192621087">DOG</Keyword>
+<Keyword weight="0.5291726725993535">DEFINITELY</Keyword>
+<Keyword weight="0.41624216157237504">DOG</Keyword>
+</Keywords>
+<Messages>
+<Message>Which bear is best.</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4306832636679445">BLACK</Keyword>
+<Keyword weight="0.40645690125577627">BEAR</Keyword>
+<Keyword weight="0.44262413594714706">OF</Keyword>
+<Keyword weight="0.4710601049197373">COURSE</Keyword>
+</Keywords>
+<Messages>
+<Message>How many fingers do you have?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4916494692534592">DOG</Keyword>
+<Keyword weight="0.49808186783067077">DEFINITELY</Keyword>
+<Keyword weight="0.4147117698172458">DOG</Keyword>
+</Keywords>
+<Messages>
+<Message>What is your favorite type of cheese?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5163025208030149">DOG</Keyword>
+<Keyword weight="0.4744607485866771">DEFINITELY</Keyword>
+<Keyword weight="0.5245854677335948">DOG</Keyword>
+</Keywords>
+<Messages>
+<Message>What kind of cheese do you like?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4902548629912383">BECAUSE</Keyword>
+<Keyword weight="0.41129058318709455">IT</Keyword>
+<Keyword weight="0.42532187471469907">IS</Keyword>
+<Keyword weight="0.46156077482383384">AWESOME</Keyword>
+</Keywords>
+<Messages>
+<Message>Do you have hands?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4387291538584543">HAVE</Keyword>
+<Keyword weight="0.5103189871002626">HANDS</Keyword>
+</Keywords>
+<Messages>
+<Message>No, you don't. </Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5081678968311906">NOW</Keyword>
+<Keyword weight="0.5659980413878889">I</Keyword>
+<Keyword weight="0.4909840576947183">KNOW</Keyword>
+</Keywords>
+<Messages>
+<Message>Do you have hands?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.45198551039691537">HAVE</Keyword>
+<Keyword weight="0.47607575601699315">HANDS</Keyword>
+</Keywords>
+<Messages>
+<Message>Yes you do.</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5753514132361888">NOW</Keyword>
+<Keyword weight="0.4000738348299471">I</Keyword>
+<Keyword weight="0.4843999918401317">KNOW</Keyword>
+</Keywords>
+<Messages>
+<Message>Do you have hands?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5594242247501694">YES</Keyword>
+<Keyword weight="0.4599094301973852">YOU</Keyword>
+<Keyword weight="0.49935304583736534">DO</Keyword>
+</Keywords>
+<Messages>
+<Message>How many hands do you have?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5495281370971116">YES</Keyword>
+<Keyword weight="0.406856623729462">YOU</Keyword>
+<Keyword weight="0.5437218422778441">DO</Keyword>
+</Keywords>
+<Messages>
+<Message>I don't understand.</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5152807928493084">I</Keyword>
+<Keyword weight="0.4872531772332219">GUESS</Keyword>
+<Keyword weight="0.537546994315697">I'LL</Keyword>
+<Keyword weight="0.5143038867632576">DO</Keyword>
+<Keyword weight="0.5843227958660175">BETTER</Keyword>
+<Keyword weight="0.5835825222031065">NEXT</Keyword>
+<Keyword weight="0.545934734225449">TIME</Keyword>
+<Keyword weight="0.41134988293054975">LET'S</Keyword>
+<Keyword weight="0.4229249613015903">CHANGE</Keyword>
+<Keyword weight="0.5258926011603842">THE</Keyword>
+<Keyword weight="0.4886748056893106">SUBJECT</Keyword>
+</Keywords>
+<Messages>
+<Message>What kind of cheese?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5551901809326006">KIND</Keyword>
+<Keyword weight="0.5249783631369873">CHEESE</Keyword>
+</Keywords>
+<Messages>
+<Message>Chedder.  Always chedder.</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5974624811580296">NOW</Keyword>
+<Keyword weight="0.40040219837619523">I</Keyword>
+<Keyword weight="0.4329230782799388">KNOW</Keyword>
+</Keywords>
+<Messages>
+<Message>What kind of cheese?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.47346504672513784">KIND</Keyword>
+<Keyword weight="0.4723921339040012">CHEESE</Keyword>
+</Keywords>
+<Messages>
+<Message>Chedder.  Always chedder.</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.40559343951635646">NOW</Keyword>
+<Keyword weight="0.5662629489446498">I</Keyword>
+<Keyword weight="0.5442926124686425">KNOW</Keyword>
+</Keywords>
+<Messages>
+<Message>Can you count?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5172723600214625">CAN</Keyword>
+<Keyword weight="0.5385705178350892">COUNT</Keyword>
+</Keywords>
+<Messages>
+<Message>Yes I can, 1,2,3,4,5,6,7,8,9,10!</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4644288638582655">YES</Keyword>
+<Keyword weight="0.5024765909536579">I</Keyword>
+<Keyword weight="0.5317639813024738">CAN</Keyword>
+<Keyword weight="0.5181582465944603">1</Keyword>
+<Keyword weight="0.5836450517766282">2</Keyword>
+<Keyword weight="0.5800381763043192">3</Keyword>
+<Keyword weight="0.5157309870289128">4</Keyword>
+<Keyword weight="0.5806272743465783">5</Keyword>
+<Keyword weight="0.4648645624759119">6</Keyword>
+<Keyword weight="0.5127554825382252">7</Keyword>
+<Keyword weight="0.5775256424834501">8</Keyword>
+<Keyword weight="0.5739187640309088">9</Keyword>
+<Keyword weight="0.573966804002937">10</Keyword>
+</Keywords>
+<Messages>
+<Message>What kind of cheese?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5176116370740366">CHEDDER</Keyword>
+<Keyword weight="0.5141480864767911">ALWAYS</Keyword>
+<Keyword weight="0.45102981682497056">CHEDDER</Keyword>
+</Keywords>
+<Messages>
+<Message>Can you count?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5181206041427089">YES</Keyword>
+<Keyword weight="0.53655216312717">I</Keyword>
+<Keyword weight="0.5569328700291314">CAN</Keyword>
+<Keyword weight="0.589382084515111">1</Keyword>
+<Keyword weight="0.5662106423804356">2</Keyword>
+<Keyword weight="0.4921999715557284">3</Keyword>
+<Keyword weight="0.5343526646107766">4</Keyword>
+<Keyword weight="0.40413081632067976">5</Keyword>
+<Keyword weight="0.546907433384777">6</Keyword>
+<Keyword weight="0.48284100448245976">7</Keyword>
+<Keyword weight="0.5190082391738305">8</Keyword>
+<Keyword weight="0.551457450679578">9</Keyword>
+<Keyword weight="0.5271393678211432">10</Keyword>
+</Keywords>
+<Messages>
+<Message>How are you?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.41833895088294826">FINE</Keyword>
+<Keyword weight="0.5734414238931529">BE</Keyword>
+<Keyword weight="0.49425366336821">THAT</Keyword>
+<Keyword weight="0.4571075333149004">WAY</Keyword>
+</Keywords>
+<Messages>
+<Message>What kind of cheese?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4408563258798803">CHEDDER</Keyword>
+<Keyword weight="0.42602372437363367">ALWAYS</Keyword>
+<Keyword weight="0.5142197960616797">CHEDDER</Keyword>
+</Keywords>
+<Messages>
+<Message>What kind of cheese?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.41368640217545183">CHEDDER</Keyword>
+<Keyword weight="0.5822188643880878">ALWAYS</Keyword>
+<Keyword weight="0.43854118360632743">CHEDDER</Keyword>
+</Keywords>
+<Messages>
+<Message>How many fingers?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5343684142358441">CHEDDER</Keyword>
+<Keyword weight="0.5370478523570703">ALWAYS</Keyword>
+<Keyword weight="0.42524392404511635">CHEDDER</Keyword>
+</Keywords>
+<Messages>
+<Message>What bear is best?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5787190154446876">CHEDDER</Keyword>
+<Keyword weight="0.5299574352467313">ALWAYS</Keyword>
+<Keyword weight="0.4595128139657425">CHEDDER</Keyword>
+</Keywords>
+<Messages>
+<Message>What is the best bear?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.41337131710979974">BLACK</Keyword>
+<Keyword weight="0.597116980789501">BEAR</Keyword>
+<Keyword weight="0.573228887457418">OF</Keyword>
+<Keyword weight="0.5567565509400065">COURSE</Keyword>
+</Keywords>
+<Messages>
+<Message>How many fingers do you have?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5207678187701402">TEN</Keyword>
+<Keyword weight="0.4668893228981521">FINGERS</Keyword>
+</Keywords>
+<Messages>
+<Message>What is your favorite movie?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5882204716963655">DOG</Keyword>
+<Keyword weight="0.49743446448986317">DEFINITELY</Keyword>
+<Keyword weight="0.5223472782926489">DOG</Keyword>
+</Keywords>
+<Messages>
+<Message>What kind of movies do you watch?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4333503360256781">KIND</Keyword>
+<Keyword weight="0.5235014200811571">MOVIES</Keyword>
+<Keyword weight="0.44941908681891823">WATCH</Keyword>
+</Keywords>
+<Messages>
+<Message>Science fiction.</Message>
+</Messages>
+</Response>
 </Responses>
+
