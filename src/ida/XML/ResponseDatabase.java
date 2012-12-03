@@ -36,6 +36,7 @@ public class ResponseDatabase {
 	public int numberOfKeywords;
 	public static User user;
 	public LinkedList<String> lastKeywordsPulled;
+	public LinkedList<Node> lastBestKeywords;
 
 	/*
 	 * Store keyword nodes for searching purposes. Node.getParent() should be
@@ -113,37 +114,46 @@ public class ResponseDatabase {
 		return similarKeywords;
 	}
 
+	@SuppressWarnings("unchecked")
 	private Node getBestResponse(LinkedList<Node> similarKeywords) {
 		// Get all the health functions for the keywords
 		Logger.log("Looking for best response\n");
 		double currentHealth = 0.0;
 		Node bestResponse = null;
 		double best = -1;
-		int startNumber = 0;
+		LinkedList<Node> bestKeywords = new LinkedList<Node>();
+		LinkedList<Node> currentKeywords = new LinkedList<Node>();
 		for (int i = 0; i < similarKeywords.size(); i++) {
 			if (i != 0) {
 				if (similarKeywords.get(i).getParentNode() != similarKeywords.get(i - 1).getParentNode()) {
-
+					
 					if (currentHealth >= best) {
-						numberOfKeywords = i - startNumber;
+						bestKeywords = (LinkedList<Node>) currentKeywords.clone();
+						//numberOfKeywords = i - startNumber;
 						Logger.log("Found a better response.\n");
 						bestResponse = similarKeywords.get(i - 1).getParentNode().getParentNode();
 						best = currentHealth;
 					}
+					
+					currentKeywords.clear();
+
 					currentHealth = 0;
-					startNumber = i;
 				}
 			}
+			currentKeywords.add(similarKeywords.get(i));
 			String weight = similarKeywords.get(i).getAttributes().getNamedItem("weight").getNodeValue();
 			currentHealth += Double.parseDouble(weight);
 			Logger.log("Weight for " + similarKeywords.get(i).getTextContent() + ": " + weight + "\n");
 		}
 
 		if (currentHealth >= best) {
+			bestKeywords = currentKeywords;
 			bestResponse = similarKeywords.get(similarKeywords.size() - 1).getParentNode().getParentNode();
 			best = currentHealth;
 		}
-
+		
+		numberOfKeywords = bestKeywords.size();
+		
 		return bestResponse;
 	}
 
@@ -174,6 +184,7 @@ public class ResponseDatabase {
 				}
 			}
 
+			
 			for (Node item : keywordsList) {
 				if (keywords.contains(item)) {
 					NamedNodeMap attribute = item.getAttributes();
