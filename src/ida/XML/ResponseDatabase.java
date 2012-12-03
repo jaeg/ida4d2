@@ -129,7 +129,6 @@ public class ResponseDatabase {
 					
 					if (currentHealth >= best) {
 						bestKeywords = (LinkedList<Node>) currentKeywords.clone();
-						//numberOfKeywords = i - startNumber;
 						Logger.log("Found a better response.\n");
 						bestResponse = similarKeywords.get(i - 1).getParentNode().getParentNode();
 						best = currentHealth;
