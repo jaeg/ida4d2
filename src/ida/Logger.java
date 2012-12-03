@@ -28,7 +28,7 @@ public class Logger extends JPanel
 
 		logPane.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener(){
 			public void adjustmentValueChanged(AdjustmentEvent e){
-			log.select(log.getHeight()+1000,0);
+				log.select(log.getHeight()+100000, 0);
 			}});
 		
 		add(logPane);
