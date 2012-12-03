@@ -40,8 +40,9 @@ public class LanguageUtility {
 			String[] strips = pieces[1].split("[\\p{P}]");
 			if (ResponseDatabase.user.getName().equals("Human"))
 				ResponseDatabase.user.setName(strips[0]);
-			else 
-				return "You already told me your name was " + ResponseDatabase.user.getName()+", are you trying to pull a fast one on me?";
+			else
+				return "You already told me your name was " + ResponseDatabase.user.getName()
+						+ ", are you trying to pull a fast one on me?";
 			return strips[0] + " is a strange name, but I guess I'll call you that.";
 		}
 		return null;
