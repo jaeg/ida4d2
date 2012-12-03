@@ -8,9 +8,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 import javax.xml.parsers.DocumentBuilder;
@@ -34,7 +34,9 @@ public class ResponseDatabase
 	private NodeList keywordNodes;
 	private Node lastResponse;
 	private LinkedList<Node> lastSimilarKeywords;
+	public int numberOfKeywords;
 	public static User user;
+	public LinkedList<String> lastKeywordsPulled;
 
 	/*
 	 * Store keyword nodes for searching purposes. Node.getParent() should be
@@ -56,8 +58,11 @@ public class ResponseDatabase
 	 * Find keywords similar Group with responses Compare weights for the
 	 * response pick best response.
 	 */
-	public Response getResponse(LinkedList<String> keywords)
+	public Response getResponse(LinkedList<String> keywordsInput)
 	{
+		
+		LinkedList<String> keywords = removeInvalidKeywords(keywordsInput);
+		lastKeywordsPulled = keywords;
 		// Get the similar keyword nodes
 		Logger.log("Keywords from message that are similar to the database: ");
 		LinkedList<Node> similarKeywords = getSimilarKeywords(keywords);
@@ -97,7 +102,7 @@ public class ResponseDatabase
 	private LinkedList<Node> getSimilarKeywords(LinkedList<String> keywords)
 	{
 		LinkedList<Node> similarKeywords = new LinkedList<Node>();
-		ArrayList<String> foundWords = new ArrayList<String>();
+		//ArrayList<String> foundWords = new ArrayList<String>();
 		for (int i = 0; i < keywordNodes.getLength(); i++)
 		{
 			if (keywords.contains(keywordNodes.item(i).getFirstChild()
@@ -109,7 +114,7 @@ public class ResponseDatabase
 
 		Logger.log("\n");
 
-		if (similarKeywords.size() == 0 || invalidKeywords(foundWords))
+		if (similarKeywords.size() == 0)
 		{
 			Logger.log("No keywords found\nResorting to fallback message.\n");
 			for (int i = 0; i < keywordNodes.getLength(); i++)
@@ -131,7 +136,7 @@ public class ResponseDatabase
 		double currentHealth = 0.0;
 		Node bestResponse = null;
 		double best = -1;
-
+		int startNumber = 0;
 		for (int i = 0; i < similarKeywords.size(); i++)
 		{
 			if (i != 0)
@@ -139,14 +144,17 @@ public class ResponseDatabase
 				if (similarKeywords.get(i).getParentNode() != similarKeywords
 						.get(i - 1).getParentNode())
 				{
+					
 					if (currentHealth >= best)
 					{
+						numberOfKeywords = i-startNumber;
 						Logger.log("Found a better response.\n");
 						bestResponse = similarKeywords.get(i - 1)
 								.getParentNode().getParentNode();
 						best = currentHealth;
 					}
 					currentHealth = 0;
+					startNumber = i;
 				}
 			}
 			String weight = similarKeywords.get(i).getAttributes()
@@ -243,17 +251,45 @@ public class ResponseDatabase
 		out.close();
 	}
 
-	private boolean invalidKeywords(ArrayList<String> list)
+	private LinkedList<String> removeInvalidKeywords(LinkedList<String> list)
 	{
-		for (String keyword : list)
-		{
-			if (keyword != "WHAT" && keyword != "HOW" && keyword != "ARE"
-					&& keyword != "WHY" && keyword != "YOU" && keyword != "WHO")
+		LinkedList<String> newKeywords = new LinkedList<String>();
+		LinkedList<String> minorWords = new LinkedList<String>();
+		File minorWordsFile = new File("minorWords.txt");
+		try{
+			Scanner minorWordsReader = new Scanner(minorWordsFile);
+			while (minorWordsReader.hasNextLine())
 			{
-				return true;
+				minorWords.add(minorWordsReader.nextLine());
 			}
 		}
-		return false;
+		catch (Exception ex)
+		{
+			Logger.log("Unable to obtain minor keywords file.  Operations may be impaired\n");
+		}
+		Logger.log("Checking for a valid sentence...\n");
+		for (String keyword : list)
+		{
+			keyword = keyword.toUpperCase();
+			keyword = keyword.trim();
+			Logger.log("Keyword being tested for validity: "+keyword+"\n");
+			if (!minorWords.contains(keyword) && keyword.length()>2)
+			{
+				Logger.log("Added keyword: "+keyword+"\n");
+				newKeywords.add(keyword);
+			}
+			else
+			{
+				Logger.log("Minor word '"+keyword+"' skipped.");
+			}
+		}
+		
+		return newKeywords;
+	}
+	
+	public LinkedList<Node> getLastSimilarKeywords()
+	{
+		return lastSimilarKeywords;
 	}
 
 }
