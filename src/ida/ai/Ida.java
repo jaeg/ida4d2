@@ -10,9 +10,6 @@ import ida.user.UserMessage;
 
 /**
  * Our chatbot. The head of the program.
- * 
- * @author Matt
- * 
  */
 public class Ida {
 
@@ -24,6 +21,7 @@ public class Ida {
 	private boolean questionAsked;
 	private int questionStep;
 	private String questionAnswer;
+	private Response lastResponse;
 
 	public Ida() {
 		Logger.log("IDA4D2 Online....\n");
@@ -44,7 +42,7 @@ public class Ida {
 		Gui.logField.append("ME: " + input + "\n");
 
 		NLP.setSentence(input);
-
+		
 		Response response;
 		if (input.contains("?") || questionAsked == true) {
 			response = question(input);
@@ -55,6 +53,7 @@ public class Ida {
 			Logger.log("Special sentence. Using LanguageUtility.\n");
 			response = NLP.respond();
 		}
+		lastResponse = response;
 		Gui.logField.append("IDA: " + response + "\n");
 
 		Logger.log("IDA responded with: " + response + "\n");
@@ -84,11 +83,18 @@ public class Ida {
 
 	public Response question(String input) {
 		Logger.log("Questions asked!\n");
+		
+		if (input.contains("How are you"))
+		{
+			return new Response("I'm doing good.");
+		}
+		
 		if (questionStep == 0) {
 			Response response;
 			response = responseDatabase.getResponse(userMessage.splitMessageIntoKeywords());
 			Logger.log("Number of keywords = " + responseDatabase.numberOfKeywords + "\n");
 			if (responseDatabase.numberOfKeywords < 2) {
+				Logger.log("Ask user for the answer\n");
 				response = new Response("How about you answer that?");
 				questionStep = 1;
 				questionAsked = true;
@@ -97,6 +103,7 @@ public class Ida {
 			}
 			return response;
 		} else if (questionStep == 1) {
+			Logger.log("Confirm the answer\n");
 			questionAnswer = input;
 			questionStep = 2;
 			return new Response("Is that the answer?");
@@ -104,7 +111,8 @@ public class Ida {
 			String answer = input.toUpperCase();
 			questionAsked = false;
 			questionStep = 0;
-			if (answer.contains("YES") || answer.contains("YEP") || answer.contains("YAH")) {
+			if (answer.contains("YES") || answer.contains("YEP") || answer.contains("YAH") || answer.contains("SURE")) {
+				Logger.log("Add answer to database.\n");
 				String keywords[] = responseDatabase.lastKeywordsPulled
 						.toArray(new String[responseDatabase.lastKeywordsPulled.size()]);
 				String messages[] = { questionAnswer };
@@ -117,6 +125,7 @@ public class Ida {
 				}
 				return new Response("Now I know!");
 			} else {
+				Logger.log("Answer rejected\n");
 				return new Response("Fine be that way!");
 			}
 		}
@@ -124,5 +133,10 @@ public class Ida {
 
 	public boolean getQuestionAsked() {
 		return questionAsked;
+	}
+	
+	public Response getLastResponse()
+	{
+		return lastResponse;
 	}
 }

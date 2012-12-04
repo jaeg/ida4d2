@@ -126,7 +126,7 @@ public class ResponseDatabase {
 		for (int i = 0; i < similarKeywords.size(); i++) {
 			if (i != 0) {
 				if (similarKeywords.get(i).getParentNode() != similarKeywords.get(i - 1).getParentNode()) {
-					
+					Logger.log("--------\n");
 					if (currentHealth >= best) {
 						bestKeywords = (LinkedList<Node>) currentKeywords.clone();
 						Logger.log("Found a better response.\n");
@@ -250,5 +250,5 @@ public class ResponseDatabase {
 	public LinkedList<Node> getLastSimilarKeywords() {
 		return lastSimilarKeywords;
 	}
-
+	
 }
