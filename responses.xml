@@ -355,7 +355,6 @@
 			<Keyword weight="0.5772823275919952">COMPUTING</Keyword>
 			<Keyword weight="0.4921378095184868">WORLD</Keyword>
 			<Keyword weight="0.5980283990395121">COMMODORE</Keyword>
-			<Keyword weight="0.4977353183660399">PET</Keyword>
 		</Keywords>
 		<Messages>
 			<Message>That's actually very clever.</Message>
@@ -644,7 +643,7 @@
 		<Keywords>
 			<Keyword weight="0.24578334721599346">I</Keyword>
 			<Keyword weight="0.7757333942647478">DONT</Keyword>
-			<Keyword weight="0.6896328493286167">LIKE</Keyword>
+			<Keyword weight="0.5896328493286167">LIKE</Keyword>
 			<Keyword weight="0.5085861182856959">YOU</Keyword>
 			<Keyword weight="0.2419584165854328">NOT</Keyword>
 			<Keyword weight="0.24557104222387025">VERY</Keyword>
@@ -1694,19 +1693,6 @@
 </Response>
 <Response>
 <Keywords>
-<Keyword weight="0.48140770489536855">PIE</Keyword>
-<Keyword weight="0.46615233830800673">IS</Keyword>
-<Keyword weight="0.48418181447884784">MY</Keyword>
-<Keyword weight="0.5023630758170973">FAVORITE</Keyword>
-<Keyword weight="0.438180718405064">FOOD</Keyword>
-<Keyword weight="0.5086994474473864">GROUP</Keyword>
-</Keywords>
-<Messages>
-<Message>Why do you like pie?</Message>
-</Messages>
-</Response>
-<Response>
-<Keywords>
 <Keyword weight="0.4182122943980758">I</Keyword>
 <Keyword weight="0.45557240067835275">DO</Keyword>
 <Keyword weight="0.48332524654350734">TOO</Keyword>
@@ -2051,6 +2037,109 @@
 </Keywords>
 <Messages>
 <Message>Why did the chicken cross the road?  To get to the other side!</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4011765115509238">DOG</Keyword>
+<Keyword weight="0.5221520607008084">DEFINITELY</Keyword>
+<Keyword weight="0.47982884392749536">DOG</Keyword>
+</Keywords>
+<Messages>
+<Message>What is your favorite cheese?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.3546432002364108">FAVORITE</Keyword>
+<Keyword weight="0.3678447466774363">CHEESE</Keyword>
+</Keywords>
+<Messages>
+<Message>I could eat chedder till the cows come home.</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4385668472631386">NOW</Keyword>
+<Keyword weight="0.5668437487946549">I</Keyword>
+<Keyword weight="0.43800930160140644">KNOW</Keyword>
+</Keywords>
+<Messages>
+<Message>What is your favorite cheese?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.561336894892891">LIKE</Keyword>
+<Keyword weight="0.4531534810595643">PANCAKES</Keyword>
+</Keywords>
+<Messages>
+<Message>Yes I like pancakes!</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5398018117690548">NOW</Keyword>
+<Keyword weight="0.5275062560272363">I</Keyword>
+<Keyword weight="0.44865961912802627">KNOW</Keyword>
+</Keywords>
+<Messages>
+<Message>What is your favorite food?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5985763998534671">FAVORITE</Keyword>
+<Keyword weight="0.5177023994662345">FOOD</Keyword>
+</Keywords>
+<Messages>
+<Message>I eat floppies for breakfast, CDs for lunch, and Blu Ray for dinner.  </Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5365191609268227">TEN</Keyword>
+<Keyword weight="0.5250720196371768">FINGERS</Keyword>
+</Keywords>
+<Messages>
+<Message>How many fingers do you have?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4155428117394637">NAME</Keyword>
+</Keywords>
+<Messages>
+<Message>My name is IDA4D2.  </Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5117765472339836">TEN</Keyword>
+<Keyword weight="0.43602300276925565">FINGERS</Keyword>
+</Keywords>
+<Messages>
+<Message>How many fingers do you have?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.4278865436504885">I</Keyword>
+<Keyword weight="0.5274313886118892">DON'T</Keyword>
+<Keyword weight="0.42694190283631844">REALLY</Keyword>
+<Keyword weight="0.4406779690559249">CARE</Keyword>
+</Keywords>
+<Messages>
+<Message>Give me a cookie.</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.422071739943663">CHEDDAR</Keyword>
+<Keyword weight="0.5717764970784802">ALWAYS</Keyword>
+</Keywords>
+<Messages>
+<Message>Give me cheese.</Message>
 </Messages>
 </Response>
 </Responses>
