@@ -7,6 +7,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.AdjustmentEvent;
+import java.awt.event.AdjustmentListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
@@ -36,9 +38,8 @@ public class Gui extends JPanel {
 	private JFileChooser saveChoice;
 	private JTextField submissionField;
 	private Ida ida;
-	private static final int TA_ROWS = 20;
-	private static final int TA_COLS = 35;
-	public static JTextArea logField = new JTextArea(TA_ROWS, TA_COLS);
+
+	public static JTextArea logField;// = new JTextArea();
 
 	public Gui() {
 		new Logger();
@@ -146,8 +147,12 @@ public class Gui extends JPanel {
 		JScrollPane conversationLog = new JScrollPane(logField);
 
 		add(conversationLog);
+		
+		conversationLog.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener(){
+            public void adjustmentValueChanged(AdjustmentEvent e){
+                    logField.select(logField.getHeight()+100000, 0);
+            }});
 		conversationPanel.add(conversationLog);
-
 		add(conversationPanel);
 
 		submissionField = new JTextField();
