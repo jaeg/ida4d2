@@ -2011,5 +2011,47 @@
 <Message>What do you think?</Message>
 </Messages>
 </Response>
+<Response>
+<Keywords>
+<Keyword weight="0.48542157618870063">FINE</Keyword>
+<Keyword weight="0.4961764075982608">BE</Keyword>
+<Keyword weight="0.5455642651606307">THAT</Keyword>
+<Keyword weight="0.5448239914977198">WAY</Keyword>
+</Keywords>
+<Messages>
+<Message>Why did the chicken cross the road?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.46622026280318685">DID</Keyword>
+<Keyword weight="0.5395300601108661">CHICKEN</Keyword>
+<Keyword weight="0.41283700287289804">CROSS</Keyword>
+<Keyword weight="0.4638474681725484">ROAD</Keyword>
+</Keywords>
+<Messages>
+<Message>To get to the other side!</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5606419599522947">FINE</Keyword>
+<Keyword weight="0.5076835409700108">BE</Keyword>
+<Keyword weight="0.4340054301340942">THAT</Keyword>
+<Keyword weight="0.4618680757645726">WAY</Keyword>
+</Keywords>
+<Messages>
+<Message>Do you tell jokes?</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5359261080984045">TELL</Keyword>
+<Keyword weight="0.45597587722775457">JOKES</Keyword>
+</Keywords>
+<Messages>
+<Message>Why did the chicken cross the road?  To get to the other side!</Message>
+</Messages>
+</Response>
 </Responses>
 
