@@ -37,6 +37,7 @@ public class ResponseDatabase {
 	public static User user;
 	public LinkedList<String> lastKeywordsPulled;
 	public LinkedList<Node> lastBestKeywords;
+	private double lastWeight;
 
 	/*
 	 * Store keyword nodes for searching purposes. Node.getParent() should be
@@ -151,6 +152,7 @@ public class ResponseDatabase {
 			best = currentHealth;
 		}
 		
+		lastWeight = best;
 		numberOfKeywords = bestKeywords.size();
 		
 		return bestResponse;
@@ -236,7 +238,7 @@ public class ResponseDatabase {
 			keyword = keyword.toUpperCase();
 			keyword = keyword.trim();
 			Logger.log("Keyword being tested for validity: " + keyword + "\n");
-			if (!minorWords.contains(keyword)) {
+			if (!minorWords.contains(keyword) && keyword.length()>=2) {
 				Logger.log("Added keyword: " + keyword + "\n");
 				newKeywords.add(keyword);
 			} else {
@@ -249,6 +251,11 @@ public class ResponseDatabase {
 
 	public LinkedList<Node> getLastSimilarKeywords() {
 		return lastSimilarKeywords;
+	}
+	
+	public double getLastWeight()
+	{
+		return lastWeight;
 	}
 	
 }
