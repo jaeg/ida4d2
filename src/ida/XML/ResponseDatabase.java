@@ -236,7 +236,7 @@ public class ResponseDatabase {
 			keyword = keyword.toUpperCase();
 			keyword = keyword.trim();
 			Logger.log("Keyword being tested for validity: " + keyword + "\n");
-			if (!minorWords.contains(keyword) && keyword.length() > 2) {
+			if (!minorWords.contains(keyword)) {
 				Logger.log("Added keyword: " + keyword + "\n");
 				newKeywords.add(keyword);
 			} else {
