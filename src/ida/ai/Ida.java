@@ -93,7 +93,8 @@ public class Ida {
 			Response response;
 			response = responseDatabase.getResponse(userMessage.splitMessageIntoKeywords());
 			Logger.log("Number of keywords = " + responseDatabase.numberOfKeywords + "\n");
-			if (responseDatabase.numberOfKeywords < 2) {
+			Logger.log("Weight of response: "+responseDatabase.getLastWeight()+"\n");
+			if (responseDatabase.getLastWeight()<0.60) {
 				Logger.log("Ask user for the answer\n");
 				response = new Response("How about you answer that?");
 				questionStep = 1;
