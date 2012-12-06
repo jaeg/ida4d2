@@ -234,7 +234,7 @@ public class Gui extends JPanel {
 		ida.respondTo(userText);
 		String lastResponse = ida.getLastResponse().toString();
 		if (!userText.contains("My name is") && !ida.getQuestionAsked() && !lastResponse.contains("Now I know") && !lastResponse.contains("Fine be that way")) {
-			ida.learn(userText);
+			//ida.learn(userText);
 		}
 		submissionField.setText("");
 	}
