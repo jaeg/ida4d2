@@ -229,7 +229,9 @@ public class ResponseDatabase {
 			Scanner minorWordsReader = new Scanner(minorWordsFile);
 			while (minorWordsReader.hasNextLine()) {
 				minorWords.add(minorWordsReader.nextLine());
+				
 			}
+			minorWordsReader.close();
 		} catch (Exception ex) {
 			Logger.log("Unable to obtain minor keywords file.  Operations may be impaired\n");
 		}

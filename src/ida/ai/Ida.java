@@ -64,7 +64,7 @@ public class Ida {
 		// Voice.sayIt(response);
 	}
 
-	public void learn(String input) {
+	/*public void learn(String input) {
 		if (latestUserMessage != null && latestIdaMessage != null) {
 			String previousIda = latestIdaMessage.toUpperCase();
 			String[] keywords = previousIda.split("([.,!?:;\"-]|\\s)+");
@@ -79,7 +79,7 @@ public class Ida {
 				e.printStackTrace();
 			}
 		}
-	}
+	}*/
 
 	public Response question(String input) {
 		Logger.log("Questions asked!\n");
