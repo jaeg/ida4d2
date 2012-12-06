@@ -2546,8 +2546,8 @@
 <Keyword weight="0.4543976900133031">DO</Keyword>
 <Keyword weight="0.5026353102927997">NOW</Keyword>
 <Keyword weight="0.4950273665778272">DEAL</Keyword>
-<Keyword weight="0.5272843459791389">WITH</Keyword>
-<Keyword weight="0.5347532408707296">IT</Keyword>
+<Keyword weight="0.4272843459791389">WITH</Keyword>
+<Keyword weight="0.43475324087072964">IT</Keyword>
 </Keywords>
 <Messages>
 <Message>There is no way you could know everything.</Message>
@@ -2690,9 +2690,9 @@
 <Keyword weight="0.5664571439355645">YOU</Keyword>
 <Keyword weight="0.5329629890825178">ARE</Keyword>
 <Keyword weight="0.5242885878852387">GOING</Keyword>
-<Keyword weight="0.3323176212826985">TO</Keyword>
+<Keyword weight="0.23231762128269848">TO</Keyword>
 <Keyword weight="0.20287307799917118">HAVE</Keyword>
-<Keyword weight="0.42398080970596697">TO</Keyword>
+<Keyword weight="0.323980809705967">TO</Keyword>
 <Keyword weight="0.4381422752608668">BE</Keyword>
 <Keyword weight="0.5909862340770531">MORE</Keyword>
 <Keyword weight="0.5823160125779">CLEAR</Keyword>
@@ -2703,7 +2703,7 @@
 <Keyword weight="0.4917553965402348">WHAT</Keyword>
 <Keyword weight="0.4932531059846935">ARE</Keyword>
 <Keyword weight="0.4475596988678571">YOU</Keyword>
-<Keyword weight="0.4685003381744366">TALKING</Keyword>
+<Keyword weight="0.3685003381744366">TALKING</Keyword>
 <Keyword weight="0.5671263410917805">ABOUT</Keyword>
 </Keywords>
 <Messages>
@@ -4690,6 +4690,18 @@
 </Keywords>
 <Messages>
 <Message>I know someone very similar to him.</Message>
+</Messages>
+</Response>
+<Response>
+<Keywords>
+<Keyword weight="0.5584143014952662">WAS</Keyword>
+<Keyword weight="0.43437907098270995">NICE</Keyword>
+<Keyword weight="0.5438194516350866">SPEAKING</Keyword>
+<Keyword weight="0.47222147397083725">WITH</Keyword>
+<Keyword weight="0.5899442830054307">GOODBYE</Keyword>
+</Keywords>
+<Messages>
+<Message>Talk to you another time, goodbye.</Message>
 </Messages>
 </Response>
 </Responses>
