@@ -234,8 +234,8 @@ public class Gui extends JPanel {
 	}
 	
 	private void openingMessage(){
-		logField.append("Hello, my name is Ida4D2. I am an interactive developmental android.\n");
-		logField.append("You may talk to me about anything. Simply write a message or question in the field below.\n");
+		logField.append("Hello, my name is Ida4D2. I am an interactive developmental android. ");
+		logField.append("You may talk to me about anything. Simply write a message or question in the field below. ");
 		logField.append("And don't mistake this message for me being polite.\n\n");
 	}
 
