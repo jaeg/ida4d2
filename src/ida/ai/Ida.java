@@ -43,7 +43,7 @@ public class Ida {
 		Gui.logField.append("ME: " + input + "\n");
 
 		NLP.setSentence(input);
-		
+
 		Response response;
 		if (input.contains("?") || questionAsked == true) {
 			response = question(input);
@@ -62,10 +62,16 @@ public class Ida {
 		latestUserMessage = userMessage.toString();
 		latestIdaMessage = response.toString();
 
-		 Voice.sayIt(response);
+		Voice.sayIt(response);
 	}
 
-	/*public void learn(String input) {
+	/**
+	 * 
+	 * Learning is currently disabled. Please enable for Ida4D2 to learn new
+	 * phrases.
+	 */
+
+	public void learn(String input) {
 		if (latestUserMessage != null && latestIdaMessage != null) {
 			String previousIda = latestIdaMessage.toUpperCase();
 			String[] keywords = previousIda.split("([.,!?:;\"-]|\\s)+");
@@ -80,22 +86,21 @@ public class Ida {
 				e.printStackTrace();
 			}
 		}
-	}*/
+	}
 
 	public Response question(String input) {
 		Logger.log("Questions asked!\n");
-		
-		if (input.contains("How are you"))
-		{
+
+		if (input.contains("How are you")) {
 			return new Response("I'm doing good.");
 		}
-		
+
 		if (questionStep == 0) {
 			Response response;
 			response = responseDatabase.getResponse(userMessage.splitMessageIntoKeywords());
 			Logger.log("Number of keywords = " + responseDatabase.numberOfKeywords + "\n");
-			Logger.log("Weight of response: "+responseDatabase.getLastWeight()+"\n");
-			if (responseDatabase.getLastWeight()<0.60) {
+			Logger.log("Weight of response: " + responseDatabase.getLastWeight() + "\n");
+			if (responseDatabase.getLastWeight() < 0.60) {
 				Logger.log("Ask user for the answer\n");
 				response = new Response("How about you answer that?");
 				questionStep = 1;
@@ -136,9 +141,8 @@ public class Ida {
 	public boolean getQuestionAsked() {
 		return questionAsked;
 	}
-	
-	public Response getLastResponse()
-	{
+
+	public Response getLastResponse() {
 		return lastResponse;
 	}
 }

@@ -2,6 +2,7 @@ package ida.gui;
 
 import ida.Logger;
 import ida.ai.Ida;
+import ida.responses.Response;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -31,6 +32,10 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileFilter;
 
+/**
+ * Graphic user interface.
+ * 
+ */
 public class Gui extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -38,8 +43,11 @@ public class Gui extends JPanel {
 	private JFileChooser saveChoice;
 	private JTextField submissionField;
 	private Ida ida;
+	private JPanel menuPanel, conversationPanel, entryPanel, buttonPanel;
+	private JButton save, clear, submit, quit, idaLog;
+	private JScrollPane conversationLog;
 
-	public static JTextArea logField;// = new JTextArea();
+	public static JTextArea logField;
 
 	public Gui() {
 		new Logger();
@@ -47,49 +55,70 @@ public class Gui extends JPanel {
 		try {
 			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 		} catch (Exception e) {
+			Logger.log("LookAndFeel did not work, but that's okay.\n");
 		}
 
-		JPanel menuPanel = new JPanel();
-		JPanel conversationPanel = new JPanel();
-		JPanel entryPanel = new JPanel();
-		JPanel buttonPanel = new JPanel();
+		menuPanel = new JPanel();
+		conversationPanel = new JPanel();
+		entryPanel = new JPanel();
+		buttonPanel = new JPanel();
 		saveChoice = new JFileChooser();
 		ida = new Ida();
 
+		setLayout();
+
+		prepareButtons();
+
+		menuPanel.add(save);
+		menuPanel.add(clear);
+
+		displayLogo();
+
+		prepareTextField();
+
+		entryPanel.add(submit);
+		entryPanel.add(submissionField);
+		add(entryPanel);
+
+		buttonPanel.add(idaLog);
+		buttonPanel.add(quit);
+		add(buttonPanel);
+
+		style();
+		
+		openingMessage();
+	}
+
+	private void setLayout() {
 		this.setBorder(new EmptyBorder(10, 50, 10, 50));
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		conversationPanel.setLayout(new BoxLayout(conversationPanel, BoxLayout.X_AXIS));
 		entryPanel.setLayout(new BoxLayout(entryPanel, BoxLayout.X_AXIS));
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+	}
 
-		JButton save = new JButton("Save Chat");
-
+	private void prepareButtons() {
+		// SAVE button
+		save = new JButton("Save Chat");
 		save.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				saveChoice.addChoosableFileFilter(new FileFilter()// adds new
-																	// filter
-																	// into list
-						{
-							String description = "Text File (*.txt)";// the
-																		// filter
-																		// you
-																		// see
-							String extension = "txt";// the filter passed to
-														// program
+				saveChoice.addChoosableFileFilter(new FileFilter() {
+					String description = "Text File (*.txt)";
+					String extension = "txt";
 
-							public String getDescription() {
-								return description;
-							}
+					public String getDescription() {
+						return description;
+					}
 
-							public boolean accept(File f) {
-								if (f == null)
-									return false;
-								if (f.isDirectory())
-									return true;
-								return f.getName().toLowerCase().endsWith(extension);
-							}
-						});
+					public boolean accept(File f) {
+						if (f == null)
+							return false;
+						if (f.isDirectory())
+							return true;
+						return f.getName().toLowerCase().endsWith(extension);
+					}
+				});
 				if (saveChoice.showDialog(null, "Save") == JFileChooser.APPROVE_OPTION) {
 					try {
 						FileWriter fstream = new FileWriter(saveChoice.getSelectedFile());
@@ -105,8 +134,8 @@ public class Gui extends JPanel {
 			}
 		});
 
-		JButton clear = new JButton("Clear Chat");
-
+		// CLEAR button
+		clear = new JButton("Clear Chat");
 		clear.addActionListener(new ActionListener() {
 
 			@Override
@@ -115,23 +144,8 @@ public class Gui extends JPanel {
 			}
 		});
 
-		menuPanel.add(save);
-		menuPanel.add(clear);
-
-		try {
-			BufferedImage logo = ImageIO.read(new File("IDALOGO.gif"));
-			JLabel logoLabel = new JLabel(new ImageIcon(logo));
-			logoLabel.setAlignmentX(0.5f);
-			add(logoLabel);
-		} catch (Exception ex) {
-			System.out.println(ex);
-		}
-
-		conversationPanel.setPreferredSize(new Dimension(365, 365));
-		add(menuPanel);
-		menuPanel.setPreferredSize(new Dimension(50, 50));
-
-		JButton submit = new JButton("Submit");
+		// SUBMIT button
+		submit = new JButton("Submit");
 		submit.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -139,19 +153,58 @@ public class Gui extends JPanel {
 			}
 		});
 
+		// QUIT button
+		quit = new JButton("Quit");
+		quit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				System.exit(0);
+			}
+		});
+
+		// IDALOG button
+		idaLog = new JButton("IDA's Thoughts");
+		idaLog.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Logger.toggleLog();
+			}
+		});
+	}
+
+	private void displayLogo() {
+		try {
+			BufferedImage logo = ImageIO.read(new File("IDALOGO.gif"));
+			JLabel logoLabel = new JLabel(new ImageIcon(logo));
+			logoLabel.setAlignmentX(0.5f);
+			add(logoLabel);
+		} catch (Exception ex) {
+			Logger.log("EXCEPTION THROWN FINDING IDA LOGO");
+			ex.printStackTrace();
+			System.exit(1);
+		}
+	}
+
+	private void prepareTextField() {
+		conversationPanel.setPreferredSize(new Dimension(365, 365));
+		add(menuPanel);
+		menuPanel.setPreferredSize(new Dimension(50, 50));
+
 		logField = new JTextArea();
 		logField.setWrapStyleWord(true);
 		logField.setLineWrap(true);
 		logField.setEditable(false);
 
-		JScrollPane conversationLog = new JScrollPane(logField);
+		conversationLog = new JScrollPane(logField);
 
 		add(conversationLog);
-		
-		conversationLog.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener(){
-            public void adjustmentValueChanged(AdjustmentEvent e){
-                    logField.select(logField.getHeight()+100000, 0);
-            }});
+
+		conversationLog.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener() {
+			public void adjustmentValueChanged(AdjustmentEvent e) {
+				// Set an arbitrarily high logField height
+				logField.select(logField.getHeight() + 100000, 0);
+			}
+		});
 		conversationPanel.add(conversationLog);
 		add(conversationPanel);
 
@@ -166,40 +219,9 @@ public class Gui extends JPanel {
 				}
 			}
 		});
-		entryPanel.add(submit);
-		entryPanel.add(submissionField);
-		add(entryPanel);
+	}
 
-		JButton log = new JButton("Full Text Log");
-
-		log.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, logField.getText());
-
-			}
-		});
-
-		JButton quit = new JButton("Quit");
-		quit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent event) {
-				System.exit(0);
-			}
-		});
-		JButton idaLog = new JButton("IDA's Thoughts");
-
-		idaLog.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Logger.toggleLog();
-			}
-		});
-
-		buttonPanel.add(idaLog);
-		buttonPanel.add(quit);
-		add(buttonPanel);
-
+	private void style() {
 		conversationPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		entryPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		buttonPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -211,19 +233,11 @@ public class Gui extends JPanel {
 
 		this.setBackground(new Color(69, 69, 69));
 	}
-
-	public class myTextArea extends JTextArea {
-
-		private static final long serialVersionUID = 1L;
-
-		public myTextArea(int rows, int cols) {
-			super(rows, cols);
-		}
-
-		public void append(String text) {
-			super.append(text);
-			this.setCaretPosition(this.getCaretPosition() + text.length());
-		}
+	
+	private void openingMessage(){
+		logField.append("Hello, my name is Ida4D2. I am an interactive developmental android.\n");
+		logField.append("You may talk to me about anything. Simply write a message or question in the field below.\n");
+		logField.append("And don't mistake this message for me being polite.\n\n");
 	}
 
 	private void submitAction() {
@@ -233,8 +247,10 @@ public class Gui extends JPanel {
 
 		ida.respondTo(userText);
 		String lastResponse = ida.getLastResponse().toString();
-		if (!userText.contains("My name is") && !ida.getQuestionAsked() && !lastResponse.contains("Now I know") && !lastResponse.contains("Fine be that way")) {
-			//ida.learn(userText);
+		if (!userText.contains("My name is") && !ida.getQuestionAsked() && !lastResponse.contains("Now I know")
+				&& !lastResponse.contains("Fine be that way")) {
+			// Learning currently disabled
+			// ida.learn(userText);
 		}
 		submissionField.setText("");
 	}

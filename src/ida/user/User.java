@@ -1,5 +1,9 @@
 package ida.user;
 
+/**
+ * Stores information on the user, which Ida4D2 will remember.
+ *
+ */
 public class User {
 
 	private String userName;

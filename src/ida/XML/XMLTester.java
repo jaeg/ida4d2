@@ -8,33 +8,37 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 /**
- * A utility for writing to the XML database.
- * Used by KeywordUtility.
+ * A testing class to check to see if the response database is being read
+ * properly.
  * 
- * @author Matt
- *
  */
 
-public class XMLTester
-{
+public class XMLTester {
+	public static void main(String[] args) {
+		ResponseDatabase parser;
+		try {
+			parser = new ResponseDatabase();
+			LinkedList<String> keywords = new LinkedList<String>();
+			keywords.add("I");
+			keywords.add("LIKE");
+			keywords.add("PIE");
 
-	/**
-	 * @param args
-	 * @throws IOException 
-	 * @throws SAXException 
-	 * @throws ParserConfigurationException 
-	 */
-	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException
-	{
-		ResponseDatabase parser = new ResponseDatabase();
-		
-		LinkedList<String> keywords = new LinkedList<String>();
-		keywords.add("I");
-		keywords.add("LIKE");
-		keywords.add("PIE");
-		
-		System.out.println(parser.getResponse(keywords));
+			System.out.println(parser.getResponse(keywords));
+		} catch (ParserConfigurationException e) {
+			System.out.println("\nParserConfigurationException!!!");
+			System.out.println("DocumentBuilder can't build with that config!\n");
+			e.printStackTrace();
+			System.exit(1);
+		} catch (SAXException e) {
+			System.out.println("\nSAXException!!!");
+			System.out.println("Something is wrong with the document!\n");
+			e.printStackTrace();
+			System.exit(1);
+		} catch (IOException e) {
+			System.out.println("\nIOException!!!\n");
+			e.printStackTrace();
+			System.exit(1);
+		}
 
 	}
-
 }
