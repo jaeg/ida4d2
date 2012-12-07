@@ -2,7 +2,6 @@ package ida.gui;
 
 import ida.Logger;
 import ida.ai.Ida;
-import ida.responses.Response;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -38,7 +37,7 @@ import javax.swing.filechooser.FileFilter;
  */
 public class Gui extends JPanel {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -149812648732649812L;
 
 	private JFileChooser saveChoice;
 	private JTextField submissionField;
