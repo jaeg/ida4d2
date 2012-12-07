@@ -17,21 +17,22 @@ import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
-public class XMLWriter
-{
-	public static void writeResponseToFile(String path, String keywords[], String messages[]) throws Exception
-	{
-		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-		Document doc = docBuilder.parse(path);
-		
-		Node root = doc.getFirstChild();
-		
-		Node responseNode = doc.createElement("Response");
-		Node keywordsNode = doc.createElement("Keywords");
-		Node messagesNode = doc.createElement("Messages");
-		for (String keyword: keywords)
-		{
+/**
+ * Allows the response.xml database to be written to
+ *
+ */
+public class XMLWriter {
+	public static void writeResponseToFile(String path, String keywords[], String messages[]) throws Exception {
+		final DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+		final DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+		final Document doc = docBuilder.parse(path);
+
+		final Node root = doc.getFirstChild();
+
+		final Node responseNode = doc.createElement("Response");
+		final Node keywordsNode = doc.createElement("Keywords");
+		final Node messagesNode = doc.createElement("Messages");
+		for (String keyword : keywords) {
 			Node keywordNode = doc.createElement("Keyword");
 			keywordNode.setTextContent(keyword);
 			Attr weight = doc.createAttribute("weight");
@@ -41,23 +42,22 @@ public class XMLWriter
 			keywordNode.getAttributes().setNamedItem(weight);
 			keywordsNode.appendChild(keywordNode);
 		}
-		
-		for (String message: messages)
-		{
+
+		for (String message : messages) {
 			Node messageNode = doc.createElement("Message");
 			messageNode.setTextContent(message);
 			messagesNode.appendChild(messageNode);
 		}
-		
+
 		responseNode.appendChild(keywordsNode);
 		responseNode.appendChild(messagesNode);
-		
+
 		root.appendChild(responseNode);
-		
+
 		Transformer transformer = TransformerFactory.newInstance().newTransformer();
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 
-		//initialize StreamResult with File object to save to file
+		// initialize StreamResult with File object to save to file
 		StreamResult result = new StreamResult(new StringWriter());
 		DOMSource source = new DOMSource(doc);
 		transformer.transform(source, result);
@@ -69,14 +69,13 @@ public class XMLWriter
 		out.println(xmlString);
 		out.close();
 	}
-	
-	public static void saveXML(Document doc) throws Exception
-	{
-		
+
+	public static void saveXML(Document doc) throws Exception {
+
 		Transformer transformer = TransformerFactory.newInstance().newTransformer();
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 
-		//initialize StreamResult with File object to save to file
+		// initialize StreamResult with File object to save to file
 		StreamResult result = new StreamResult(new StringWriter());
 		DOMSource source = new DOMSource(doc);
 		transformer.transform(source, result);
@@ -87,7 +86,7 @@ public class XMLWriter
 		PrintWriter out = new PrintWriter(file);
 		out.println(xmlString);
 		out.close();
-		
+
 	}
 
 }

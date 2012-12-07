@@ -10,48 +10,46 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-public class Logger extends JPanel
-{
+/**
+ * Our logging framework. Includes static frame to be toggled.
+ * 
+ */
+public class Logger extends JPanel {
 	private static final long serialVersionUID = 1L;
-	static JTextArea log = new JTextArea();
+	public static JTextArea log = new JTextArea();
 	private static JFrame logFrame;
 	private static boolean currentState = false;
-	
-	public Logger()
-	{
+
+	public Logger() {
 		logFrame = new JFrame("Log window");
 		logFrame.getContentPane().add(this);
-		
+
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		JScrollPane logPane = new JScrollPane(log);
-		logPane.setPreferredSize(new Dimension(370,500));
+		logPane.setPreferredSize(new Dimension(370, 500));
 
-		logPane.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener(){
-			public void adjustmentValueChanged(AdjustmentEvent e){
-				log.select(log.getHeight()+100000, 0);
-			}});
-		
+		logPane.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener() {
+			public void adjustmentValueChanged(AdjustmentEvent e) {
+				log.select(log.getHeight() + 100000, 0);
+			}
+		});
+
 		add(logPane);
-		
+
 		logFrame.pack();
 		logFrame.setVisible(true);
 		currentState = true;
 		logFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		
+
 	}
-	
-	public static void log(String message)
-	{
+
+	public static void log(String message) {
 		log.append(message);
 	}
-	
-	public static void toggleLog()
-	{
+
+	public static void toggleLog() {
 		logFrame.setVisible(!currentState);
 		currentState = !currentState;
 	}
 
-	
-	
 }
-

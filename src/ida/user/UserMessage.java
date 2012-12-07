@@ -7,7 +7,6 @@ import java.util.LinkedList;
 /**
  * Data structure that stores the user input as soon as it is entered.
  * 
- * @since 0.1
  * 
  */
 public class UserMessage {

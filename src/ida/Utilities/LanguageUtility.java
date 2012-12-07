@@ -3,6 +3,12 @@ package ida.Utilities;
 import ida.XML.ResponseDatabase;
 import ida.responses.Response;
 
+/**
+ * Identifies special sentences and gives special responses.
+ * 
+ * TODO: Eventually, these special phrases should be external.
+ *
+ */
 public class LanguageUtility {
 
 	private String sentence;

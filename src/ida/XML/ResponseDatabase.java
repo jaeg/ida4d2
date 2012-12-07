@@ -28,6 +28,11 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+/**
+ * Our primary functional class, in which all database
+ * I/O is performed. Called primarily by Ida class
+ *
+ */
 public class ResponseDatabase {
 	private Document doc;
 	private NodeList keywordNodes;
@@ -39,7 +44,7 @@ public class ResponseDatabase {
 	public LinkedList<Node> lastBestKeywords;
 	private double lastWeight;
 
-	/*
+	/**
 	 * Store keyword nodes for searching purposes. Node.getParent() should be
 	 * useful in this case.
 	 */

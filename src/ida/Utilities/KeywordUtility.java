@@ -15,11 +15,17 @@ import javax.swing.JTextArea;
 import javax.swing.ScrollPaneLayout;
 import javax.swing.border.EmptyBorder;
 
+/**
+ * A development utility built to easily enter phrases 
+ * and keywords into the response database.
+ * 
+ *
+ */
 public class KeywordUtility extends JPanel {
 	private static final long serialVersionUID = 1L;
 
-	JTextArea keywordInput;
-	JTextArea messageInput;
+	private JTextArea keywordInput;
+	private JTextArea messageInput;
 
 	public static void main(String[] args) {
 
